@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЧПУ-мастерская «Резец» в Перми — фрезерная и токарная обработка по чертежу</title>
+  <meta name="description" content="Мастерская «Резец» в Перми: фрезерная и токарная обработка на станках с ЧПУ, программы (G-код), 3D-модели и чертежи. Детали по чертежу, эскизу или образцу — от одной штуки. Пришлите файл — посчитаем цену и срок.">
+  <link rel="canonical" href="https://rezec-perm.ru/">
+  <meta name="theme-color" content="#0F1215">
+
+  <!-- Превью для соцсетей и мессенджеров -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="ЧПУ-мастерская «Резец»">
+  <meta property="og:title" content="ЧПУ-мастерская «Резец» в Перми">
+  <meta property="og:description" content="Детали по вашему чертежу — от одной штуки до серии. Фрезеровка, токарка, G-код и 3D-модели.">
+  <meta property="og:url" content="https://rezec-perm.ru/">
+  <meta property="og:image" content="https://rezec-perm.ru/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preload" href="fonts/Manrope-cyrillic-v.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ЯНДЕКС МЕТРИКА: вставьте сюда код счётчика из metrika.yandex.ru,
+       а в строке ниже замените 0 на номер счётчика — тогда заявки будут считаться как цель «order». -->
+  <script>window.YM_ID = 0;</script>
+
+  <!-- Данные для Яндекса и Google: карточка организации -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ЧПУ-мастерская «Резец»",
+    "url": "https://rezec-perm.ru/",
+    "image": "https://rezec-perm.ru/images/og.jpg",
+    "telephone": "+7 (342) 000-00-00",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Примерная, 1",
+      "addressLocality": "Пермь",
+      "addressCountry": "RU"
+    },
+    "openingHours": ["Mo-Fr 09:00-18:00"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+
+  <!-- ШАПКА -->
+  <header class="header" id="top">
+    <div class="wrap header__in">
+      <a class="logo" href="#top" aria-label="Мастерская «Резец» — на главную">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#1B2026"/>
+          <circle cx="20" cy="20" r="11" fill="none" stroke="#F5A524" stroke-width="2.6"/>
+          <path d="M20 6v8M20 26v8M6 20h8M26 20h8" stroke="#F5A524" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__text">РЕЗЕЦ<small>ЧПУ-мастерская · Пермь</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <a href="#services">Услуги</a>
+        <a href="#process">Как работаем</a>
+        <a href="#materials">Материалы</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contacts">Контакты</a>
+        <a class="nav__tel" href="tel:+73420000000">+7 (342) 000-00-00</a>
+      </nav>
+
+      <a class="header__tel" href="tel:+73420000000">+7 (342) 000-00-00</a>
+      <a class="btn btn--primary header__btn" href="#order">Отправить чертёж</a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ПЕРВЫЙ ЭКРАН -->
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__text">
+          <p class="eyebrow">Металлообработка на станках с ЧПУ</p>
+          <h1>Детали по вашему чертежу —<br><em>от одной штуки</em> до серии</h1>
+          <p class="hero__lead">Фрезерная и токарная обработка, программы для станков и 3D-модели. Пришлите чертёж, эскиз или фото старой детали — посчитаем цену и срок и скажем, из чего лучше сделать.</p>
+          <div class="hero__btns">
+            <a class="btn btn--primary btn--lg" href="#order">Рассчитать по чертежу</a>
+            <a class="btn btn--ghost btn--lg" href="#services">Что мы делаем</a>
+          </div>
+          <ul class="hero__facts">
+            <li><b>1 шт.</b><span>берём и штучные заказы</span></li>
+            <li><b>G-код</b><span>пишем программы сами</span></li>
+            <li><b>3D</b><span>сделаем модель по образцу</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" role="img" aria-label="Чертёж детали: корпус с пазами и отверстиями, рядом траектория фрезы">
+          <svg viewBox="0 0 520 440" aria-hidden="true">
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" fill="none" stroke="#1F262E" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="520" height="440" rx="22" fill="#12161A"/>
+            <rect width="520" height="440" rx="22" fill="url(#grid)"/>
+            <!-- деталь -->
+            <g stroke="#8FA0B3" stroke-width="2" fill="none">
+              <path d="M80 330V170h120v-40h120v40h120v160z"/>
+              <circle cx="140" cy="250" r="22"/>
+              <circle cx="380" cy="250" r="22"/>
+              <rect x="225" y="215" width="70" height="70" rx="8"/>
+              <path d="M260 130v-28" stroke-dasharray="4 5"/>
+            </g>
+            <!-- размеры -->
+            <g stroke="#F5A524" stroke-width="1.4" fill="#F5A524" font-family="Manrope, sans-serif" font-size="14">
+              <path d="M80 368h360M80 360v16M440 360v16"/>
+              <text x="236" y="392" stroke="none">360</text>
+              <path d="M472 170v160M464 170h16M464 330h16"/>
+              <text x="482" y="256" stroke="none">160</text>
+              <text x="118" y="210" stroke="none">⌀44</text>
+            </g>
+            <!-- траектория фрезы -->
+            <path d="M60 90c60-40 130 10 190-14s110-34 210 4" stroke="#F5A524" stroke-width="2" fill="none" stroke-dasharray="8 7" class="path-anim"/>
+            <g class="tool">
+              <rect x="444" y="40" width="26" height="54" rx="4" fill="#F5A524"/>
+              <rect x="452" y="94" width="10" height="20" rx="2" fill="#FFC35C"/>
+            </g>
+            <text x="34" y="56" fill="#5E6B78" font-family="Manrope, sans-serif" font-size="13" letter-spacing="2">G01 X360.0 Y160.0 F800</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section section--alt" id="services">
+      <div class="wrap">
+        <p class="eyebrow">Услуги</p>
+        <h2>Берём задачу целиком — или помогаем на отдельном этапе</h2>
+        <div class="cards">
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38h28M14 38V22h20v16M20 22V10h8v12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 6v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <h3>Фрезерная обработка</h3>
+            <p>Корпуса, плиты, кронштейны, пазы, карманы и точные отверстия по чертежу на обрабатывающем центре с ЧПУ.</p>
+            <a class="card__link" href="#order" data-service="Фрезерная обработка">Отправить чертёж →</a>
+          </article>
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 24h8M34 24h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="14" y="14" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M14 20h20M14 28h20" stroke="currentColor" stroke-width="2"/></svg>
+            <h3>Токарная обработка</h3>
+            <p>Валы, втулки, кольца, фланцы и резьбовые детали — штучно и небольшими партиями.</p>
+            <a class="card__link" href="#order" data-service="Токарная обработка">Отправить чертёж →</a>
+          </article>
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 16l-8 8 8 8M31 16l8 8-8 8M27 12l-6 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Программы для ЧПУ</h3>
+            <p>Пишем и отлаживаем G-код в CAM под ваш станок и стойку. Вы получаете готовую программу, а не неделю наладки.</p>
+            <a class="card__link" href="#order" data-service="Программа для ЧПУ (G-код)">Обсудить программу →</a>
+          </article>
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l16 9v18l-16 9-16-9V15z M8 15l16 9 16-9M24 24v18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            <h3>3D-модели и чертежи</h3>
+            <p>Сделаем модель и чертёж в Siemens NX по эскизу или размерам — для производства, ремонта или заказа на стороне.</p>
+            <a class="card__link" href="#order" data-service="3D-модель / чертёж">Заказать модель →</a>
+          </article>
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M28 28l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M15 20h10M20 15v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3>Деталь по образцу</h3>
+            <p>Сломалась деталь, а чертежа нет? Обмерим старую, сделаем модель и изготовим новую — даже если деталь давно не выпускают.</p>
+            <a class="card__link" href="#order" data-service="Деталь по образцу">Прислать фото →</a>
+          </article>
+          <article class="card">
+            <svg class="card__ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="28" y="10" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="8" y="28" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="28" y="28" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+            <h3>Небольшие серии</h3>
+            <p>Повторяем детали партиями с одинаковым качеством: программа и оснастка сохраняются для следующих заказов.</p>
+            <a class="card__link" href="#order" data-service="Серия деталей">Рассчитать партию →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК РАБОТАЕМ -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <p class="eyebrow">Как работаем</p>
+        <h2>От чертежа до готовой детали — 4 шага</h2>
+        <ol class="steps">
+          <li class="step"><span class="step__n">01</span><h3>Заявка</h3><p>Присылаете чертёж, 3D-модель, эскиз от руки или фото детали с размерами.</p></li>
+          <li class="step"><span class="step__n">02</span><h3>Расчёт</h3><p>Уточняем материал, допуски и количество. Называем цену и срок — до начала работы.</p></li>
+          <li class="step"><span class="step__n">03</span><h3>Изготовление</h3><p>Готовим программу, подбираем инструмент и делаем деталь на станке с ЧПУ.</p></li>
+          <li class="step"><span class="step__n">04</span><h3>Контроль и выдача</h3><p>Проверяем размеры по чертежу и передаём детали. Программа остаётся — повтор будет быстрее.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- МАТЕРИАЛЫ -->
+    <section class="section section--alt" id="materials">
+      <div class="wrap materials">
+        <div class="materials__text">
+          <p class="eyebrow">Материалы</p>
+          <h2>Из чего делаем</h2>
+          <p class="muted">Нажмите на материал — расскажем, для каких деталей он обычно подходит. Не знаете, что выбрать? Подскажем при расчёте.</p>
+          <div class="chips" role="tablist" aria-label="Материалы">
+            <button class="chip is-active" type="button" role="tab" aria-selected="true" data-mat="0">Алюминий</button>
+            <button class="chip" type="button" role="tab" aria-selected="false" data-mat="1">Сталь</button>
+            <button class="chip" type="button" role="tab" aria-selected="false" data-mat="2">Нержавейка</button>
+            <button class="chip" type="button" role="tab" aria-selected="false" data-mat="3">Латунь и бронза</button>
+            <button class="chip" type="button" role="tab" aria-selected="false" data-mat="4">Инженерные пластики</button>
+          </div>
+        </div>
+        <div class="mat-card" id="mat-card" role="tabpanel" aria-live="polite">
+          <p class="eyebrow">Выбрано</p>
+          <h3 id="mat-name">Алюминий</h3>
+          <p id="mat-text">Лёгкий и хорошо обрабатывается. Подходит для корпусов, кронштейнов, крышек, переходников и прототипов.</p>
+          <ul class="mat-tags" id="mat-tags"><li>корпуса</li><li>кронштейны</li><li>прототипы</li></ul>
+          <a class="btn btn--primary" href="#order" id="mat-btn" data-material="Алюминий">Деталь из этого материала</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЧТО ПРИСЛАТЬ -->
+    <section class="section" id="files">
+      <div class="wrap need">
+        <div>
+          <p class="eyebrow">Для расчёта</p>
+          <h2>Что прислать, чтобы посчитать быстро</h2>
+          <ul class="checks">
+            <li>Чертёж или 3D-модель — если есть</li>
+            <li>Если нет: эскиз от руки или фото детали рядом с линейкой</li>
+            <li>Материал (или для чего нужна деталь — подберём сами)</li>
+            <li>Количество и желаемый срок</li>
+          </ul>
+        </div>
+        <div class="formats">
+          <p class="formats__title">Принимаем файлы</p>
+          <ul>
+            <li>PDF</li><li>DWG</li><li>DXF</li><li>STEP</li><li>IGES</li><li>STL</li><li>JPG / PNG</li><li>ZIP</li>
+          </ul>
+          <p class="muted small">Файл до 10 МБ прикрепляется прямо в форме ниже и сразу приходит мастеру.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section class="section section--dark" id="order">
+      <div class="wrap order">
+        <div class="order__text">
+          <p class="eyebrow">Заявка на расчёт</p>
+          <h2>Отправьте чертёж — посчитаем цену и срок</h2>
+          <p class="muted">Ответим в рабочее время в течение дня. Расчёт бесплатный и ни к чему не обязывает.</p>
+          <ul class="order__alt">
+            <li>Или позвоните: <a href="tel:+73420000000">+7 (342) 000-00-00</a></li>
+            <li>Или напишите в Telegram: <a href="https://t.me/" target="_blank" rel="noopener">@rezec_perm</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="form" action="send.php" method="post" enctype="multipart/form-data" novalidate>
+          <p class="form__picked" hidden></p>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Имя</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="60">
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 (___) ___-__-__">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-service">Что нужно</label>
+              <select id="f-service" name="service">
+                <option>Фрезерная обработка</option>
+                <option>Токарная обработка</option>
+                <option>Программа для ЧПУ (G-код)</option>
+                <option>3D-модель / чертёж</option>
+                <option>Деталь по образцу</option>
+                <option>Серия деталей</option>
+                <option>Пока не знаю — нужна консультация</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-material">Материал</label>
+              <select id="f-material" name="material">
+                <option>Не знаю — подскажите</option>
+                <option>Алюминий</option>
+                <option>Сталь</option>
+                <option>Нержавейка</option>
+                <option>Латунь и бронза</option>
+                <option>Инженерные пластики</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-qty">Количество, шт.</label>
+              <input id="f-qty" name="qty" type="number" min="1" max="100000" value="1" inputmode="numeric">
+            </div>
+            <div class="field field--file">
+              <span class="label">Чертёж или фото</span>
+              <label class="file" for="f-file">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="file__name">Выбрать файл (до 10 МБ)</span>
+              </label>
+              <input id="f-file" class="file__input" name="file" type="file" accept=".pdf,.dwg,.dxf,.step,.stp,.igs,.iges,.stl,.jpg,.jpeg,.png,.zip">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-comment">Комментарий</label>
+            <textarea id="f-comment" name="comment" rows="3" maxlength="1000" placeholder="Например: нужна втулка как на фото, 4 шт., к концу месяца"></textarea>
+          </div>
+
+          <!-- защита от спама: скрытое поле и время открытия формы -->
+          <div class="hp" aria-hidden="true"><label>Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="ts" value="">
+
+          <label class="consent">
+            <input type="checkbox" name="consent" value="1" required>
+            <span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+          </label>
+          <button class="btn btn--primary btn--lg form__btn" type="submit">Отправить на расчёт</button>
+          <p class="form__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ВОПРОСЫ -->
+    <section class="section" id="faq">
+      <div class="wrap faq">
+        <p class="eyebrow">Вопросы</p>
+        <h2>Частые вопросы</h2>
+        <details>
+          <summary>Возьмёте одну деталь?</summary>
+          <p>Да. Штучные заказы — обычное дело: ремонт оборудования, прототип, замена сломанной детали.</p>
+        </details>
+        <details>
+          <summary>У меня нет чертежа, только старая деталь</summary>
+          <p>Пришлите фото детали рядом с линейкой или привезите её. Мы обмерим, сделаем 3D-модель и чертёж, а потом изготовим новую.</p>
+        </details>
+        <details>
+          <summary>Можно заказать только программу для своего станка?</summary>
+          <p>Да. Напишите модель станка и стойки ЧПУ — подготовим и проверим G-код под ваше оборудование и инструмент.</p>
+        </details>
+        <details>
+          <summary>Сколько стоит и как быстро?</summary>
+          <p>Цена зависит от материала, сложности, точности и количества. Пришлите чертёж или фото — назовём точную цену и срок до начала работы.</p>
+        </details>
+        <details>
+          <summary>Работаете с организациями?</summary>
+          <p>Да, работаем с частными лицами и организациями, по договору и с закрывающими документами.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section section--alt" id="contacts">
+      <div class="wrap contacts">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2>Мастерская в Перми</h2>
+          <ul class="contacts__list">
+            <li><span>Адрес</span>г. Пермь, ул. Примерная, 1</li>
+            <li><span>Телефон</span><a href="tel:+73420000000">+7 (342) 000-00-00</a></li>
+            <li><span>Режим работы</span>Пн–Пт 9:00–18:00</li>
+            <li><span>Мессенджеры</span><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> · <a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a></li>
+          </ul>
+        </div>
+        <div class="map">
+          <!-- Карта: замените src на ссылку виджета Яндекс Карт (см. ИНСТРУКЦИЯ.txt) -->
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=56.229398%2C58.010455&amp;z=12" title="Карта: мастерская «Резец» в Перми" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <p>© <span id="year">2026</span> ЧПУ-мастерская «Резец», Пермь<br>ИП Фамилия Имя Отчество · ИНН 000000000000</p>
+      <p><a href="privacy.html">Политика конфиденциальности</a></p>
+    </div>
+  </footer>
+
+  <a class="fab" href="#order" aria-label="Отправить чертёж на расчёт">Отправить чертёж</a>
+
+  <script src="js/demo.js"></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
