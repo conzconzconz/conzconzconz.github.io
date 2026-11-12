@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Гараж 59 — автосервис</title>
+  <meta name="description" content="Автосервис «Гараж 59»: ТО и замена масла, диагностика, тормоза, подвеска, ремонт двигателя, шиномонтаж. Калькулятор стоимости и онлайн-запись." />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Верхняя полоса -->
+  <div class="topbar">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a class="brand" href="#top" aria-label="Гараж 59 — на главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#FF7A1A"/><path d="M9 20l11-9 11 9v10H9z" fill="none" stroke="#16181C" stroke-width="3" stroke-linejoin="round"/><path d="M14 30v-6h12v6M14 27h12" stroke="#16181C" stroke-width="2.4"/></svg>
+        </span>
+        <span>Гараж<b>59</b></span>
+      </a>
+      <ul class="topbar-info list-unstyled d-none d-md-flex mb-0">
+        <li>г. Пермь, ул. Примерная, 1</li>
+        <li>Пн–Сб 9:00–20:00</li>
+        <li><a class="tel" href="tel:+73420000000">+7 (342) 000-00-00</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Навигация -->
+  <nav class="navbar navbar-expand-lg navbar-dark main-nav sticky-top">
+    <div class="container">
+      <span class="navbar-brand d-lg-none">Меню сайта</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="#menu">Услуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calc">Калькулятор</a></li>
+          <li class="nav-item"><a class="nav-link" href="#steps">Как работаем</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Почему мы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking">Запись</a></li>
+        </ul>
+        <a href="#booking" class="btn btn-accent btn-sm-nav d-none d-lg-inline-flex">Записаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Первый экран -->
+  <header id="top" class="hero">
+    <div id="heroSlider" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+      <div class="carousel-inner">
+        <div class="carousel-item active s1">
+          <div class="container hero-row">
+            <div class="hero-text">
+              <p class="eyebrow"><span class="dot"></span>Сегодня есть свободные окна</p>
+              <h1>Ремонт, которому<br /><span>можно доверять</span></h1>
+              <p class="lead">ТО, диагностика, тормоза и подвеска для легковых машин и микроавтобусов. Называем цену до начала работ и показываем старые детали.</p>
+              <div class="hero-btns">
+                <a href="#booking" class="btn btn-accent">Записаться на ремонт</a>
+                <a href="#calc" class="btn btn-ghost">Рассчитать стоимость</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item s2">
+          <div class="container hero-row">
+            <div class="hero-text">
+              <p class="eyebrow"><span class="dot"></span>Техобслуживание</p>
+              <h1>ТО за 1 час<br /><span>без записи за неделю</span></h1>
+              <p class="lead">Замена масла и фильтров с вашими или нашими запчастями. Пока ждёте — кофе и Wi-Fi в зоне отдыха.</p>
+              <div class="hero-btns">
+                <a href="#booking" class="btn btn-accent">Выбрать время</a>
+                <a href="#menu" class="btn btn-ghost">Цены на услуги</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item s3">
+          <div class="container hero-row">
+            <div class="hero-text">
+              <p class="eyebrow"><span class="dot"></span>Подвеска и развал</p>
+              <h1>Машина едет ровно,<br /><span>руль не тянет</span></h1>
+              <p class="lead">Проверим ходовую на подъёмнике бесплатно при любом ремонте и честно скажем, что можно не менять.</p>
+              <div class="hero-btns">
+                <a href="#booking" class="btn btn-accent">Записаться на проверку</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#heroSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#heroSlider" data-slide-to="1"></li>
+        <li data-target="#heroSlider" data-slide-to="2"></li>
+      </ol>
+    </div>
+  </header>
+
+  <!-- Цифры -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-lg-3 stat"><b>12</b><span>лет ремонтируем машины</span></div>
+        <div class="col-6 col-lg-3 stat"><b>6</b><span>подъёмников, без очередей</span></div>
+        <div class="col-6 col-lg-3 stat"><b>1 год</b><span>гарантия на работы</span></div>
+        <div class="col-6 col-lg-3 stat"><b>0 ₽</b><span>осмотр ходовой при ремонте</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="head-row">
+        <div><p class="kicker">01 / Услуги</p><h2 class="section-title">Что ремонтируем</h2></div>
+        <p class="head-note">Цены указаны за работу для легкового авто. Точную сумму назовём после осмотра — до начала ремонта.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_to.jpg" alt="Мастер проверяет моторный отсек" loading="lazy" /></div>
+            <div class="menu-body"><h3>ТО и замена масла</h3><p>Масло, фильтры, проверка жидкостей и ремней по регламенту.</p><div class="price-row"><span class="price">от 900 ₽</span><span class="time">от 40 мин</span></div></div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_diag.jpg" alt="Компьютерная диагностика автомобиля" loading="lazy" /></div>
+            <div class="menu-body"><h3>Компьютерная диагностика</h3><p>Считаем ошибки, проверим датчики и расскажем, что срочно, а что подождёт.</p><div class="price-row"><span class="price">от 1 500 ₽</span><span class="time">30 мин</span></div></div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_tormoza.jpg" alt="Ремонт тормозного суппорта" loading="lazy" /></div>
+            <div class="menu-body"><h3>Тормозная система</h3><p>Колодки, диски, суппорты, замена тормозной жидкости.</p><div class="price-row"><span class="price">от 1 600 ₽</span><span class="time">от 1 часа</span></div></div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_podveska.jpg" alt="Автомобиль на подъёмнике" loading="lazy" /></div>
+            <div class="menu-body"><h3>Подвеска и ходовая</h3><p>Амортизаторы, рычаги, сайлентблоки, развал-схождение.</p><div class="price-row"><span class="price">от 1 800 ₽</span><span class="time">от 1 часа</span></div></div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_dvigatel.jpg" alt="Ремонт двигателя" loading="lazy" /></div>
+            <div class="menu-body"><h3>Ремонт двигателя</h3><p>Ремень и цепь ГРМ, прокладки, навесное оборудование.</p><div class="price-row"><span class="price">от 4 500 ₽</span><span class="time">от 1 дня</span></div></div>
+          </article>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <article class="menu-card">
+            <div class="menu-img"><img src="images/avto_shiny.jpg" alt="Шиномонтаж" loading="lazy" /></div>
+            <div class="menu-body"><h3>Шиномонтаж</h3><p>Сезонная замена, балансировка, ремонт проколов, хранение шин.</p><div class="price-row"><span class="price">от 2 400 ₽</span><span class="time">40 мин</span></div></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Калькулятор -->
+  <section id="calc" class="section section-dark">
+    <div class="container">
+      <div class="head-row">
+        <div><p class="kicker">02 / Калькулятор</p><h2 class="section-title light">Сколько будет стоить</h2></div>
+        <p class="head-note light">Отметьте работы — сумма посчитается сразу. Это ориентир, без учёта запчастей.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-left">
+          <p class="calc-label">Тип автомобиля</p>
+          <div class="seg" role="radiogroup" aria-label="Тип автомобиля">
+            <label><input type="radio" name="car" value="1" checked /><span>Легковой</span></label>
+            <label><input type="radio" name="car" value="1.2" /><span>Кроссовер</span></label>
+            <label><input type="radio" name="car" value="1.4" /><span>Микроавтобус</span></label>
+          </div>
+          <p class="calc-label">Работы</p>
+          <div class="works">
+            <label class="work"><input type="checkbox" value="900" checked /><span class="box"></span><span class="wn">Замена масла</span><span class="wp">900 ₽</span></label>
+            <label class="work"><input type="checkbox" value="600" checked /><span class="box"></span><span class="wn">Замена фильтров</span><span class="wp">600 ₽</span></label>
+            <label class="work"><input type="checkbox" value="1500" /><span class="box"></span><span class="wn">Компьютерная диагностика</span><span class="wp">1 500 ₽</span></label>
+            <label class="work"><input type="checkbox" value="1600" /><span class="box"></span><span class="wn">Замена тормозных колодок</span><span class="wp">1 600 ₽</span></label>
+            <label class="work"><input type="checkbox" value="1800" /><span class="box"></span><span class="wn">Развал-схождение</span><span class="wp">1 800 ₽</span></label>
+            <label class="work"><input type="checkbox" value="2400" /><span class="box"></span><span class="wn">Сезонная замена шин</span><span class="wp">2 400 ₽</span></label>
+          </div>
+        </div>
+        <div class="calc-right">
+          <p class="calc-label">Примерная стоимость работ</p>
+          <div class="total"><span id="total">1 500</span> ₽</div>
+          <p class="calc-note" id="calcNote">2 работы · легковой автомобиль</p>
+          <ul class="calc-plus list-unstyled">
+            <li>Цена фиксируется до начала ремонта</li>
+            <li>Осмотр ходовой — бесплатно</li>
+            <li>Гарантия на работы — 1 год</li>
+          </ul>
+          <a href="#booking" class="btn btn-accent btn-block-c" id="calcBook">Записаться с этим расчётом</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как работаем -->
+  <section id="steps" class="section">
+    <div class="container">
+      <div class="head-row">
+        <div><p class="kicker">03 / Как работаем</p><h2 class="section-title">Без сюрпризов в чеке</h2></div>
+      </div>
+      <div class="row steps">
+        <div class="col-sm-6 col-lg-3 mb-4"><div class="step"><span class="sn">01</span><h3>Запись</h3><p>Онлайн или по телефону — подберём удобное время без очереди.</p></div></div>
+        <div class="col-sm-6 col-lg-3 mb-4"><div class="step"><span class="sn">02</span><h3>Осмотр</h3><p>Мастер проверит машину и покажет, что нужно сделать в первую очередь.</p></div></div>
+        <div class="col-sm-6 col-lg-3 mb-4"><div class="step"><span class="sn">03</span><h3>Согласование</h3><p>Называем цену работ и запчастей. Без вашего «да» ничего не делаем.</p></div></div>
+        <div class="col-sm-6 col-lg-3 mb-4"><div class="step"><span class="sn">04</span><h3>Выдача</h3><p>Отдаём машину, старые детали и заказ-наряд с гарантией на 1 год.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Почему мы -->
+  <section id="why" class="split">
+    <div class="split-art"><img src="images/avto_split.jpg" alt="Набор инструментов механика" loading="lazy" /></div>
+    <div class="split-text">
+      <p class="kicker">04 / Почему мы</p>
+      <h2>Чиним так, как&nbsp;чинили бы себе</h2>
+      <ul class="why-list list-unstyled">
+        <li><b>Опытные мастера.</b> Каждый работает у нас больше 5 лет.</li>
+        <li><b>Своё оборудование.</b> Подъёмники, стенд развала, профессиональные сканеры.</li>
+        <li><b>Запчасти на выбор.</b> Оригинал или проверенные аналоги — решаете вы.</li>
+        <li><b>Фото и отчёт.</b> Пришлём фото неисправности, если вы не на месте.</li>
+      </ul>
+      <a href="#booking" class="btn btn-accent">Записаться на ремонт</a>
+    </div>
+  </section>
+
+  <!-- Запись -->
+  <section id="booking" class="section section-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <p class="kicker">05 / Запись</p>
+          <h2 class="section-title">Записаться на ремонт</h2>
+          <p class="book-text">Оставьте заявку — перезвоним в течение 15 минут, уточним марку машины и подберём время.</p>
+          <a class="big-tel" href="tel:+73420000000">+7 (342) 000-00-00</a>
+          <p class="book-hours">Пн–Сб 9:00–20:00, воскресенье — выходной</p>
+        </div>
+        <div class="col-lg-7">
+          <form class="booking-form" onsubmit="event.preventDefault(); document.getElementById('formOk').hidden=false; this.reset();">
+            <div class="form-row">
+              <div class="form-group col-md-6"><label for="name">Имя</label><input id="name" class="form-control" type="text" required autocomplete="name" /></div>
+              <div class="form-group col-md-6"><label for="phone">Телефон</label><input id="phone" class="form-control" type="tel" required autocomplete="tel" /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6"><label for="car">Марка и модель</label><input id="car" class="form-control" type="text" placeholder="Например, Ford Transit" /></div>
+              <div class="form-group col-md-6"><label for="date">Удобная дата</label><input id="date" class="form-control" type="date" required /></div>
+            </div>
+            <div class="form-group"><label for="msg">Что беспокоит</label><textarea id="msg" class="form-control" rows="3" placeholder="Например: стучит спереди справа на кочках"></textarea></div>
+            <button type="submit" class="btn btn-accent">Отправить заявку</button>
+            <p id="formOk" class="form-ok" hidden>Спасибо! Перезвоним в течение 15 минут.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row footer-cols">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <a class="brand light" href="#top"><span>Гараж<b>59</b></span></a>
+          <p class="mt-3">Автосервис для легковых машин и микроавтобусов. ТО, диагностика, ремонт ходовой и двигателя.</p>
+        </div>
+        <div class="col-6 col-lg-2 mb-4">
+          <h3>Разделы</h3>
+          <ul class="list-unstyled"><li><a href="#menu">Услуги</a></li><li><a href="#calc">Калькулятор</a></li><li><a href="#steps">Как работаем</a></li><li><a href="#booking">Запись</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-3 mb-4">
+          <h3>Часы работы</h3>
+          <ul class="list-unstyled"><li>Пн–Сб: 9:00–20:00</li><li>Вс: выходной</li></ul>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <h3>Контакты</h3>
+          <ul class="list-unstyled"><li>г. Пермь, ул. Примерная, 1</li><li><a href="tel:+73420000000">+7 (342) 000-00-00</a></li><li><a href="mailto:info@example.com">info@example.com</a></li></ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Автосервис «Гараж 59». Демонстрационный сайт. Фото: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+    </div>
+  </footer>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    $('#nav .nav-link').on('click', function () { $('#nav').collapse('hide'); });
+
+    // Калькулятор стоимости работ
+    var carNames = { '1': 'легковой автомобиль', '1.2': 'кроссовер', '1.4': 'микроавтобус' };
+    function plural(n) { var m10 = n % 10, m100 = n % 100; if (m10 === 1 && m100 !== 11) return 'работа'; if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'работы'; return 'работ'; }
+    function calc() {
+      var k = parseFloat($('input[name=car]:checked').val());
+      var sum = 0, n = 0;
+      $('.work input:checked').each(function () { sum += +this.value; n++; });
+      sum = Math.round(sum * k / 50) * 50;
+      $('#total').text(sum.toLocaleString('ru-RU'));
+      $('#calcNote').text(n ? n + ' ' + plural(n) + ' · ' + carNames[String(k)] : 'Выберите хотя бы одну работу');
+    }
+    $('.calc input').on('change', calc); calc();
+    $('#calcBook').on('click', function () {
+      var works = $('.work input:checked').map(function () { return $(this).siblings('.wn').text(); }).get().join(', ');
+      if (works) $('#msg').val('Расчёт с сайта: ' + works + ' — ' + $('#total').text() + ' ₽');
+    });
+  </script>
+</body>
+</html>
