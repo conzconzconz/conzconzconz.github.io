@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Чистый дом — уборка квартир и домов в Перми</title>
+<meta name="description" content="Уборка квартир в Перми с фиксированной ценой: поддерживающая, генеральная, после ремонта. Калькулятор стоимости и онлайн-запись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230e3b43'/%3E%3Cpath d='M16 6l2.2 6.3L24 14.5l-5.8 2.2L16 23l-2.2-6.3L8 14.5l5.8-2.2z' fill='%23f5d547'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0e2a31; --teal:#0e3b43; --teal-2:#15535d; --lemon:#f5d547; --lemon-d:#e8c22a;
+  --mint:#dff1ea; --bg:#f6f8f7; --card:#fff; --muted:#5b6d70; --line:#dbe3e1; --ok:#1d7a52;
+  --r:20px; --display:"Unbounded","Manrope",system-ui,sans-serif; --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:0;border-radius:999px;background:var(--lemon);color:var(--ink);font:700 16px var(--body);text-decoration:none;cursor:pointer;transition:background .15s,transform .15s}
+.btn:hover{background:var(--lemon-d)}
+.btn:active{transform:translateY(1px)}
+.btn.dark{background:var(--teal);color:#fff}
+.btn.dark:hover{background:var(--teal-2)}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn.ghost:hover{border-color:#fff}
+:focus-visible{outline:3px solid var(--lemon);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.08;margin:0}
+h2{font-size:clamp(28px,4vw,44px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-2)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lemon)}
+section{padding:80px 0}
+.sub{color:var(--muted);max-width:58ch;margin:14px 0 36px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(14,59,67,.96);backdrop-filter:blur(8px);color:#fff}
+.bar{display:flex;align-items:center;gap:24px;min-height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:20px}
+.logo svg{width:36px;height:36px}
+nav.menu{display:flex;gap:24px;margin-left:auto;font-weight:600;font-size:15px}
+nav.menu a{text-decoration:none;color:rgba(255,255,255,.8)}
+nav.menu a:hover{color:#fff}
+.phone{font-weight:800;text-decoration:none;white-space:nowrap}
+.bar .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* hero */
+.hero{background:var(--teal);color:#fff;padding:64px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% auto;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(245,213,71,.18),transparent 65%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.hero h1{font-size:clamp(36px,5.4vw,64px);margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--lemon)}
+.hero .eyebrow{color:var(--lemon)}
+.hero p.lead{font-size:19px;color:rgba(255,255,255,.82);max-width:48ch;margin:0 0 30px}
+.trust{display:flex;flex-wrap:wrap;gap:12px 26px;margin:34px 0 0;padding:0;list-style:none;font-weight:600;font-size:15px;color:rgba(255,255,255,.9)}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust svg{width:20px;height:20px;color:var(--lemon)}
+.sparkles{position:absolute;right:46%;top:20px;opacity:.5}
+
+/* calculator */
+.calc{background:#fff;color:var(--ink);border-radius:26px;padding:28px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.calc h3{font-size:22px;margin-bottom:6px}
+.calc .hint{font-size:14px;color:var(--muted);margin:0 0 18px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--bg);padding:5px;border-radius:14px;margin-bottom:18px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;text-align:center;padding:10px 6px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;line-height:1.2}
+.seg input:checked+span{background:var(--teal);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--lemon)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:6px 0 4px;font-weight:700}
+.row output{font-family:var(--display);font-size:20px}
+input[type=range]{width:100%;accent-color:var(--teal);margin:6px 0 18px}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.extras label{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;line-height:1.25}
+.extras input{accent-color:var(--teal);width:18px;height:18px;flex:none}
+.extras label:has(input:checked){border-color:var(--teal);background:var(--mint)}
+.extras small{display:block;color:var(--muted);font-weight:500}
+.total{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:16px;border-top:1.5px dashed var(--line);margin-bottom:16px}
+.total b{font-family:var(--display);font-size:34px;line-height:1}
+.total span{font-size:14px;color:var(--muted)}
+.calc .btn{width:100%}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feat{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:24px}
+.feat .ic{width:48px;height:48px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--teal);margin-bottom:16px}
+.feat .ic svg{width:26px;height:26px}
+.feat h3{font-size:18px;margin-bottom:8px}
+.feat p{margin:0;color:var(--muted);font-size:15px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:28px;border:1.5px solid var(--line)}
+.svc.hot{background:var(--teal);color:#fff;border-color:var(--teal)}
+.svc .price{font-family:var(--display);font-size:30px;margin:14px 0 2px}
+.svc .unit{font-size:14px;color:var(--muted)}
+.svc.hot .unit{color:rgba(255,255,255,.7)}
+.svc ul{list-style:none;margin:20px 0 26px;padding:0;display:grid;gap:10px;font-size:15px}
+.svc li{display:flex;gap:10px}
+.svc li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e3b43' stroke-width='3'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.svc.hot li::before{background-color:var(--lemon)}
+.svc .btn{margin-top:auto}
+.badge{align-self:flex-start;background:var(--lemon);color:var(--ink);font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+
+/* checklist tabs */
+.check{background:#fff;border-radius:28px;padding:36px;display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tab{display:flex;align-items:center;gap:12px;text-align:left;padding:16px 18px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font:700 16px var(--body);color:var(--ink);cursor:pointer}
+.tab[aria-selected=true]{background:var(--teal);border-color:var(--teal);color:#fff}
+.tab svg{width:22px;height:22px}
+.panel{display:none}
+.panel.on{display:block}
+.panel ul{columns:2;column-gap:28px;padding:0;margin:0;list-style:none}
+.panel li{break-inside:avoid;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.panel li b{display:inline-block;min-width:22px;color:var(--teal-2)}
+.panel h3{font-size:22px;margin-bottom:16px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding:26px 22px 22px;border-radius:var(--r);background:var(--mint);counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:44px;color:var(--teal);opacity:.25;position:absolute;right:18px;top:10px}
+.steps b{display:block;font-size:18px;margin-bottom:6px}
+.steps span{color:var(--muted);font-size:15px}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:860px}
+details{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:0 22px}
+summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);color:var(--teal-2);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 20px;color:var(--muted)}
+
+/* booking */
+.book{background:var(--teal);color:#fff;border-radius:32px;padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.book h2{color:#fff}
+.book .sub{color:rgba(255,255,255,.75)}
+.summary{background:rgba(255,255,255,.08);border-radius:16px;padding:18px 20px;font-size:15px}
+.summary b{color:var(--lemon);font-family:var(--display);font-size:24px;display:block;margin-top:6px}
+form.f{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld.full{grid-column:1/-1}
+.fld label{font-size:14px;font-weight:700;color:rgba(255,255,255,.85)}
+.fld input,.fld select,.fld textarea{min-height:50px;padding:12px 14px;border-radius:12px;border:1.5px solid transparent;background:#fff;font:500 16px var(--body);color:var(--ink)}
+.fld textarea{min-height:90px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--lemon)}
+.agree{grid-column:1/-1;display:flex;gap:10px;font-size:13px;color:rgba(255,255,255,.7);align-items:flex-start}
+.agree input{accent-color:var(--lemon);width:18px;height:18px;margin-top:1px;flex:none}
+form.f .btn{grid-column:1/-1}
+.ok{display:none;grid-column:1/-1;background:var(--lemon);color:var(--ink);border-radius:14px;padding:16px 18px;font-weight:700}
+.err{color:#ffb4a8;font-size:13px;min-height:0}
+
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+@media (max-width:980px){
+  .hero-grid,.book,.check{grid-template-columns:1fr}
+  .features,.steps{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr}
+  nav.menu{display:none}
+  .sparkles{display:none}
+}
+@media (max-width:560px){
+  section{padding:56px 0}
+  .features,.steps,.extras,form.f{grid-template-columns:1fr}
+  .panel ul{columns:1}
+  .book,.check{padding:26px}
+  .calc{padding:22px}
+  .bar .btn{display:none}
+  .seg span{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2z" fill="currentColor"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="team" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.8-3.4 3-5.2 5.5-5.2s4.7 1.8 5.5 5.2"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.6c2.6-.3 4.5 1.4 5 4.4"/></g></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19 13 11"/></g></symbol>
+  <symbol id="camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+  <symbol id="wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16 14.5h2"/></g></symbol>
+  <symbol id="kitchen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M8 6h.01M11 6h.01M9 13h6"/></g></symbol>
+  <symbol id="room" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 18v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5M3 18h18M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M5 18v2M19 18v2"/></g></symbol>
+  <symbol id="bath" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zM6 12V5a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></g></symbol>
+  <symbol id="hall" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 21V4h12v17M3 21h18M14.5 12.5h.01"/></g></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Чистый дом — на главную">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="11" fill="#f5d547"/><path d="M18 7l2.6 7.4L28 17l-7.4 2.6L18 27l-2.6-7.4L8 17l7.4-2.6z" fill="#0e3b43"/></svg>
+      Чистый дом
+    </a>
+    <nav class="menu" aria-label="Разделы">
+      <a href="#prices">Цены</a><a href="#what">Что убираем</a><a href="#how">Как работаем</a><a href="#faq">Вопросы</a>
+    </nav>
+    <a class="phone" href="tel:+73422000000">+7 (342) 200-00-00</a>
+    <a class="btn" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Клининг в Перми</span>
+        <h1>Уборка квартир с&nbsp;<em>фиксированной ценой</em></h1>
+        <p class="lead">Посчитайте стоимость за 30 секунд — и она не изменится после уборки. Свои клинеры, эко-химия и фото-отчёт после работы.</p>
+        <a class="btn" href="#calc">Рассчитать уборку</a>
+        <a class="btn ghost" href="#what" style="margin-left:8px">Что входит</a>
+        <ul class="trust">
+          <li><svg><use href="#check"/></svg>Без предоплаты</li>
+          <li><svg><use href="#check"/></svg>Выезд сегодня</li>
+          <li><svg><use href="#check"/></svg>Своя химия и инвентарь</li>
+        </ul>
+      </div>
+
+      <form class="calc" id="calc" aria-labelledby="calc-title" onsubmit="return false">
+        <h3 id="calc-title">Калькулятор уборки</h3>
+        <p class="hint">Цена фиксируется при записи</p>
+        <div class="seg" role="radiogroup" aria-label="Тип уборки">
+          <label><input type="radio" name="type" value="support" checked><span>Поддержи&shy;вающая</span></label>
+          <label><input type="radio" name="type" value="general"><span>Генеральная</span></label>
+          <label><input type="radio" name="type" value="repair"><span>После ремонта</span></label>
+        </div>
+        <div class="row"><label for="area">Площадь</label><output id="area-out" for="area">50 м²</output></div>
+        <input id="area" type="range" min="20" max="200" step="5" value="50">
+        <div class="extras">
+          <label><input type="checkbox" data-price="1800" data-name="Окна">Окна<small>до 4 створок</small></label>
+          <label><input type="checkbox" data-price="700" data-name="Холодильник">Холодильник<small>внутри</small></label>
+          <label><input type="checkbox" data-price="700" data-name="Духовка">Духовка<small>внутри</small></label>
+          <label><input type="checkbox" data-price="900" data-name="Балкон">Балкон<small>или лоджия</small></label>
+        </div>
+        <div class="total"><div><span>Итого</span><br><b id="total">3 750 ₽</b></div><span id="time">≈ 3 ч · 1 клинер</span></div>
+        <a class="btn dark" href="#book" id="calc-go">Записаться по этой цене</a>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="features">
+        <div class="feat"><div class="ic"><svg><use href="#team"/></svg></div><h3>Свои клинеры</h3><p>Работают в штате, прошли обучение и проверку. Никаких случайных людей.</p></div>
+        <div class="feat"><div class="ic"><svg><use href="#leaf"/></svg></div><h3>Эко-химия</h3><p>Безопасна для детей и животных, без резкого запаха. Привозим всё с собой.</p></div>
+        <div class="feat"><div class="ic"><svg><use href="#camera"/></svg></div><h3>Фото-отчёт</h3><p>Присылаем фото «до» и «после», если вас нет дома во время уборки.</p></div>
+        <div class="feat"><div class="ic"><svg><use href="#wallet"/></svg></div><h3>Оплата после</h3><p>Платите только когда приняли работу — картой, по СБП или наличными.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" style="padding-top:20px">
+    <div class="wrap">
+      <span class="eyebrow">Цены</span>
+      <h2 style="margin-top:12px">Три вида уборки</h2>
+      <p class="sub">Цена считается от площади квартиры. Минимальный заказ — 2 900 ₽.</p>
+      <div class="svc-grid">
+        <article class="svc">
+          <h3>Поддерживающая</h3>
+          <div class="price">75 ₽</div><div class="unit">за м² · от 2 900 ₽</div>
+          <ul><li>Влажная уборка всех поверхностей</li><li>Мытьё полов и плинтусов</li><li>Кухня: столешница, плита, фасады</li><li>Санузел и сантехника</li><li>Вынос мусора</li></ul>
+          <a class="btn" href="#book" data-type="support">Выбрать</a>
+        </article>
+        <article class="svc hot">
+          <span class="badge">Чаще заказывают</span>
+          <h3>Генеральная</h3>
+          <div class="price">150 ₽</div><div class="unit">за м² · от 5 900 ₽</div>
+          <ul><li>Всё из поддерживающей</li><li>Мебель и техника снаружи и внутри</li><li>Двери, выключатели, радиаторы</li><li>Удаление известкового налёта</li><li>Люстры и светильники</li></ul>
+          <a class="btn" href="#book" data-type="general">Выбрать</a>
+        </article>
+        <article class="svc">
+          <h3>После ремонта</h3>
+          <div class="price">220 ₽</div><div class="unit">за м² · от 8 900 ₽</div>
+          <ul><li>Удаление строительной пыли</li><li>Следы краски, клея, затирки</li><li>Мытьё окон и рам</li><li>Чистка вентиляционных решёток</li><li>Вывоз строительного мусора — отдельно</li></ul>
+          <a class="btn" href="#book" data-type="repair">Выбрать</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" style="padding-top:20px">
+    <div class="wrap">
+      <span class="eyebrow">Чек-лист</span>
+      <h2 style="margin-top:12px">Что убираем в каждой комнате</h2>
+      <p class="sub">Генеральная уборка. Клинер идёт по этому списку и отмечает каждый пункт.</p>
+      <div class="check">
+        <div class="tabs" role="tablist" aria-label="Комнаты">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="p-kitchen" id="t-kitchen"><svg><use href="#kitchen"/></svg>Кухня</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-room" id="t-room" tabindex="-1"><svg><use href="#room"/></svg>Комнаты</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-bath" id="t-bath" tabindex="-1"><svg><use href="#bath"/></svg>Санузел</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-hall" id="t-hall" tabindex="-1"><svg><use href="#hall"/></svg>Прихожая</button>
+        </div>
+        <div>
+          <div class="panel on" role="tabpanel" id="p-kitchen" aria-labelledby="t-kitchen"><h3>Кухня</h3><ul>
+            <li><b>1</b>Фасады и ручки шкафов</li><li><b>2</b>Шкафы внутри</li><li><b>3</b>Столешница и фартук</li><li><b>4</b>Плита и вытяжка</li><li><b>5</b>Микроволновка внутри</li><li><b>6</b>Раковина и смеситель</li><li><b>7</b>Холодильник снаружи</li><li><b>8</b>Подоконник и радиатор</li><li><b>9</b>Пол и плинтусы</li><li><b>10</b>Мусорное ведро</li></ul></div>
+          <div class="panel" role="tabpanel" id="p-room" aria-labelledby="t-room" hidden><h3>Комнаты</h3><ul>
+            <li><b>1</b>Пыль со всех поверхностей</li><li><b>2</b>Шкафы снаружи и сверху</li><li><b>3</b>Зеркала и стеклянные поверхности</li><li><b>4</b>Люстры и светильники</li><li><b>5</b>Двери и выключатели</li><li><b>6</b>Подоконники и радиаторы</li><li><b>7</b>Пылесос ковров и мебели</li><li><b>8</b>Заправка постели</li><li><b>9</b>Пол и плинтусы</li></ul></div>
+          <div class="panel" role="tabpanel" id="p-bath" aria-labelledby="t-bath" hidden><h3>Санузел</h3><ul>
+            <li><b>1</b>Ванна или душевая</li><li><b>2</b>Унитаз снаружи и внутри</li><li><b>3</b>Раковина и смесители</li><li><b>4</b>Плитка и швы</li><li><b>5</b>Известковый налёт</li><li><b>6</b>Зеркала и полки</li><li><b>7</b>Полотенцесушитель</li><li><b>8</b>Пол и плинтусы</li></ul></div>
+          <div class="panel" role="tabpanel" id="p-hall" aria-labelledby="t-hall" hidden><h3>Прихожая</h3><ul>
+            <li><b>1</b>Входная дверь с двух сторон</li><li><b>2</b>Шкаф и вешалка</li><li><b>3</b>Зеркало</li><li><b>4</b>Полка для обуви</li><li><b>5</b>Выключатели и розетки</li><li><b>6</b>Пол и коврик</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="padding-top:20px">
+    <div class="wrap">
+      <span class="eyebrow">Как работаем</span>
+      <h2 style="margin-top:12px">От заявки до чистоты</h2>
+      <p class="sub">Обычно приезжаем на следующий день, а при свободных клинерах — в день заявки.</p>
+      <ol class="steps">
+        <li><b>Заявка</b><span>Считаете цену на сайте и оставляете телефон.</span></li>
+        <li><b>Звонок</b><span>Менеджер уточняет детали и время за 10 минут.</span></li>
+        <li><b>Уборка</b><span>Клинер приезжает со своей химией и инвентарём.</span></li>
+        <li><b>Приёмка</b><span>Вы проверяете работу и только потом платите.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:20px">
+    <div class="wrap">
+      <span class="eyebrow">Вопросы</span>
+      <h2 style="margin:12px 0 30px">Частые вопросы</h2>
+      <div class="faq">
+        <details open><summary>Цена может измениться после уборки?</summary><p>Нет. Цена из калькулятора фиксируется при записи. Если на месте окажется больше работы, чем вы указали, клинер сначала согласует доплату с вами.</p></details>
+        <details><summary>Нужно ли быть дома во время уборки?</summary><p>Не обязательно. Можно оставить ключи консьержу или передать курьеру. Клинер пришлёт фото «до» и «после».</p></details>
+        <details><summary>Что если мне не понравится результат?</summary><p>Сообщите в течение 24 часов — клинер бесплатно приедет и переделает.</p></details>
+        <details><summary>Какую химию вы используете?</summary><p>Профессиональные эко-средства, безопасные для детей и животных. Если у вас аллергия, скажите заранее — возьмём гипоаллергенные.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" style="padding-top:20px">
+    <div class="wrap">
+      <div class="book">
+        <div>
+          <span class="eyebrow" style="color:var(--lemon)">Онлайн-запись</span>
+          <h2 style="margin-top:12px">Запишитесь на уборку</h2>
+          <p class="sub">Перезвоним в течение 10 минут, подтвердим время и цену.</p>
+          <div class="summary" aria-live="polite">Ваш расчёт: <span id="sum-text">поддерживающая, 50 м²</span><b id="sum-price">3 750 ₽</b></div>
+        </div>
+        <form class="f" id="book-form" novalidate>
+          <div class="fld"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
+          <div class="fld"><label for="f-phone">Телефон *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required><span class="err" id="e-phone"></span></div>
+          <div class="fld"><label for="f-date">Дата</label><input id="f-date" name="date" type="date"></div>
+          <div class="fld"><label for="f-time">Время</label><select id="f-time" name="time"><option>Утро, 9:00–12:00</option><option>День, 12:00–16:00</option><option>Вечер, 16:00–20:00</option></select></div>
+          <div class="fld full"><label for="f-district">Район</label><select id="f-district" name="district"><option>Ленинский</option><option>Свердловский</option><option>Дзержинский</option><option>Индустриальный</option><option>Мотовилихинский</option><option>Кировский</option><option>Орджоникидзевский</option><option>Пригород</option></select></div>
+          <div class="fld full"><label for="f-note">Комментарий</label><textarea id="f-note" name="note" placeholder="Например: есть кот, нужна гладильная доска"></textarea></div>
+          <label class="agree"><input type="checkbox" id="f-agree" required> Согласен на обработку персональных данных</label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <div class="ok" id="ok" role="status">Спасибо! Заявка принята — перезвоним в течение 10 минут.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> «Чистый дом», Пермь · +7 (342) 200-00-00</span>
+    <span>Демо-проект: название, телефон и цены вымышленные.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var RATES = {support:{rate:75,min:2900,label:'поддерживающая',speed:18},general:{rate:150,min:5900,label:'генеральная',speed:9},repair:{rate:220,min:8900,label:'после ремонта',speed:6}};
+  var area = document.getElementById('area'), out = document.getElementById('area-out');
+  var totalEl = document.getElementById('total'), timeEl = document.getElementById('time');
+  var sumText = document.getElementById('sum-text'), sumPrice = document.getElementById('sum-price');
+  var fmt = function(n){ return n.toLocaleString('ru-RU').replace(/ /g,' ') + ' ₽'; };
+
+  function calc(){
+    var t = document.querySelector('input[name=type]:checked').value, r = RATES[t];
+    var a = +area.value, sum = Math.max(r.min, a * r.rate), extras = [];
+    document.querySelectorAll('.extras input:checked').forEach(function(c){ sum += +c.dataset.price; extras.push(c.dataset.name.toLowerCase()); });
+    var hours = a / r.speed + extras.length * 0.5, people = hours > 5 ? 2 : 1;
+    hours = Math.max(2, Math.round(hours / people * 2) / 2);
+    out.textContent = a + ' м²';
+    totalEl.textContent = fmt(sum);
+    timeEl.textContent = '≈ ' + String(hours).replace('.', ',') + ' ч · ' + people + (people > 1 ? ' клинера' : ' клинер');
+    sumText.textContent = r.label + ', ' + a + ' м²' + (extras.length ? ' + ' + extras.join(', ') : '');
+    sumPrice.textContent = fmt(sum);
+  }
+  document.getElementById('calc').addEventListener('input', calc);
+  document.querySelectorAll('[data-type]').forEach(function(b){
+    b.addEventListener('click', function(){ document.querySelector('input[name=type][value=' + b.dataset.type + ']').checked = true; calc(); });
+  });
+  calc();
+
+  // tabs
+  var tabs = document.querySelectorAll('.tab');
+  function select(tab){
+    tabs.forEach(function(t){ var on = t === tab; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      var p = document.getElementById(t.getAttribute('aria-controls')); p.hidden = !on; p.classList.toggle('on', on); });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { e.preventDefault(); var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus(); }
+    });
+  });
+
+  // phone mask
+  var phone = document.getElementById('f-phone');
+  phone.addEventListener('input', function(){
+    var d = phone.value.replace(/\D/g, '').replace(/^8/, '7'); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+    var s = '+7'; if (d.length > 1) s += ' (' + d.slice(1, 4); if (d.length >= 4) s += ') ' + d.slice(4, 7); if (d.length >= 7) s += '-' + d.slice(7, 9); if (d.length >= 9) s += '-' + d.slice(9, 11);
+    phone.value = d ? s : '';
+  });
+
+  // min date = today
+  var dt = document.getElementById('f-date'), today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  dt.min = today.toISOString().slice(0, 10);
+
+  // form (демо: заявка не отправляется на сервер)
+  document.getElementById('book-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = document.getElementById('e-phone'), ok = phone.value.replace(/\D/g, '').length === 11;
+    err.textContent = ok ? '' : 'Введите номер полностью';
+    if (!ok) { phone.focus(); return; }
+    if (!document.getElementById('f-agree').checked) { document.getElementById('f-agree').focus(); return; }
+    document.getElementById('ok').style.display = 'block';
+    this.querySelector('button[type=submit]').disabled = true;
+  });
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
