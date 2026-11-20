@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор юнит-экономики WB и Ozon — бесплатно</title>
+<meta name="description" content="Бесплатный калькулятор юнит-экономики для продавцов Wildberries и Ozon: прибыль с одной штуки, маржа, ROI, минимальная цена без убытка, налог самозанятого и УСН.">
+<meta property="og:title" content="Калькулятор юнит-экономики WB и Ozon">
+<meta property="og:description" content="Сколько вы реально зарабатываете с одной штуки — с комиссией, логистикой, возвратами, рекламой и налогом.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f2;--ink:#14161c;--mut:#5d6472;--acc:#7c3aed;--acc2:#db2777;--line:#e5e3dd;--ok:#15803d;--bad:#dc2626}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{padding:18px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:800}
+.logo span{color:var(--acc)}
+a{color:var(--acc)}
+.top{padding:22px 0 10px}
+.tag{display:inline-block;background:#ede9fe;color:#5b21b6;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.06;letter-spacing:-.03em}
+.lead{color:var(--mut);font-size:17px;margin:12px 0 0;max-width:720px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin:26px auto 40px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
+.tabs{display:flex;gap:8px;margin-bottom:18px}
+.tabs button{flex:1;padding:12px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+.tabs button.on{border-color:var(--acc);background:#f5f3ff;color:#5b21b6}
+fieldset{border:0;margin-bottom:16px}
+legend{font-weight:800;font-size:15px;margin-bottom:10px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:14px;color:var(--mut);font-weight:500}
+label b{color:var(--ink);font-weight:600}
+input,select{width:100%;margin-top:5px;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--acc)}
+.hint{font-size:12.5px;color:var(--mut);margin-top:4px}
+.res{position:sticky;top:16px}
+.big{border-radius:18px;padding:20px;color:#fff;background:linear-gradient(135deg,#1e1b4b,#4c1d95)}
+.big .l{font-size:14px;opacity:.85}
+.big .v{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:4px}
+.big .s{font-size:14px;margin-top:6px;opacity:.9}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.kpi .l{font-size:12.5px;color:var(--mut)}
+.kpi .v{font-size:21px;font-weight:800;margin-top:2px}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px}
+td{padding:7px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+tr.tot td{border-bottom:0;font-weight:800;font-size:15.5px;padding-top:10px}
+.verdict{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:14.5px}
+.v-ok{background:#ecfdf5;color:#065f46}.v-mid{background:#fffbeb;color:#92400e}.v-bad{background:#fef2f2;color:#991b1b}
+.batch{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14.5px}
+.batch input{width:110px;display:inline-block;margin:0 6px;padding:7px 9px}
+section.info{padding:10px 0 40px}
+h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;margin-bottom:12px}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.box h3{font-size:16.5px;margin-bottom:6px}
+.box p{color:var(--mut);font-size:14.5px}
+.note{font-size:13px;color:var(--mut);margin-top:16px}
+.more{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.more p{color:var(--mut);margin-top:4px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:12px;white-space:nowrap}
+footer{padding:26px 0 40px;color:var(--mut);font-size:13px;text-align:center}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.res{position:static}.cards3{grid-template-columns:1fr}}
+@media (max-width:480px){.row{grid-template-columns:1fr}.big .v{font-size:34px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="logo">奇尔图洛夫<span>.</span>Студия</div>
+<a href="../kartochki/">Карточки для WB и Ozon</a>
+</div></header>
+<div class="wrap top">
+<div class="tag">Бесплатно · без регистрации</div>
+<h1>Калькулятор юнит-экономики для Wildberries и Ozon</h1>
+<p class="lead">Сколько вы реально зарабатываете с одной проданной штуки — с учётом комиссии, логистики, возвратов, рекламы и налога. И какая минимальная цена, ниже которой товар продаётся в минус.</p>
+</div>
+<div class="wrap grid">
+<div class="panel">
+<div class="tabs"><button id="t-wb" class="on" type="button">Wildberries</button><button id="t-oz" type="button">Ozon</button></div>
+<fieldset><legend>Товар</legend>
+<div class="row">
+<label><b>Цена продажи, ₽</b><input id="price" type="number" inputmode="decimal" value="1500"><div class="hint">цена для покупателя после ваших скидок</div></label>
+<label><b>Закупка / себестоимость, ₽</b><input id="cogs" type="number" inputmode="decimal" value="450"><div class="hint">за 1 штуку</div></label>
+</div>
+<div class="row" style="margin-top:12px">
+<label><b>Доставка до склада МП, ₽</b><input id="inb" type="number" inputmode="decimal" value="40"><div class="hint">на 1 штуку</div></label>
+<label><b>Упаковка, маркировка, ₽</b><input id="pack" type="number" inputmode="decimal" value="25"></label>
+</div>
+</fieldset>
+<fieldset><legend>Маркетплейс</legend>
+<div class="row">
+<label><b>Комиссия, %</b><input id="comm" type="number" inputmode="decimal" value="24"><div class="hint">смотрите для своей категории в кабинете</div></label>
+<label><b>Логистика до покупателя, ₽</b><input id="log" type="number" inputmode="decimal" value="90"></label>
+</div>
+<div class="row" style="margin-top:12px">
+<label><b>Обратная логистика, ₽</b><input id="ret" type="number" inputmode="decimal" value="50"><div class="hint">за возврат или невыкуп</div></label>
+<label><b>Процент выкупа, %</b><input id="buy" type="number" inputmode="decimal" value="85"></label>
+</div>
+<div class="row" style="margin-top:12px">
+<label><b>Хранение, ₽ на штуку</b><input id="stor" type="number" inputmode="decimal" value="10"></label>
+<label><b>Эквайринг и прочее, %</b><input id="acq" type="number" inputmode="decimal" value="0"><div class="hint">если удерживается отдельно</div></label>
+</div>
+</fieldset>
+<fieldset><legend>Реклама и налог</legend>
+<div class="row">
+<label><b>Реклама, % от выручки</b><input id="ads" type="number" inputmode="decimal" value="8"></label>
+<label><b>Налоговый режим</b>
+<select id="tax">
+<option value="npd6">Самозанятый (НПД) — 6% с ИП/ООО</option>
+<option value="npd4">Самозанятый (НПД) — 4% с физлиц</option>
+<option value="usn6" selected>УСН «Доходы» 6%</option>
+<option value="usn15">УСН «Доходы минус расходы» 15%</option>
+<option value="custom">Свой процент от выручки</option>
+</select></label>
+</div>
+<div class="row" style="margin-top:12px" id="customRow" hidden>
+<label><b>Свой налог, %</b><input id="taxc" type="number" inputmode="decimal" value="7"></label>
+</div>
+</fieldset>
+<p class="note">Цифры по умолчанию — просто пример. Комиссия, логистика и хранение зависят от категории, габаритов и склада: точные значения берите в личном кабинете продавца или в отчёте о реализации.</p>
+</div>
+<div class="res">
+<div class="big"><div class="l">Чистая прибыль с 1 проданной штуки</div><div class="v" id="r-profit">—</div><div class="s" id="r-sub"></div></div>
+<div class="kpis">
+<div class="kpi"><div class="l">Маржа</div><div class="v" id="r-margin">—</div></div>
+<div class="kpi"><div class="l">ROI (на вложенное)</div><div class="v" id="r-roi">—</div></div>
+<div class="kpi"><div class="l">Цена без убытка</div><div class="v" id="r-be">—</div></div>
+<div class="kpi"><div class="l">Цена для маржи 20%</div><div class="v" id="r-p20">—</div></div>
+</div>
+<div class="panel" style="margin-top:12px;padding:16px 18px">
+<table id="tbl"></table>
+<div class="verdict" id="r-verdict"></div>
+</div>
+<div class="batch">Партия <input id="qty" type="number" inputmode="numeric" value="100"> шт. → вложения <b id="b-inv">—</b>, прибыль <b id="b-pr">—</b></div>
+</div>
+</div>
+<section class="info"><div class="wrap">
+<h2>Что считает калькулятор</h2>
+<div class="cards3">
+<div class="box"><h3>Возвраты и невыкупы</h3><p>Если выкупают 85%, то за каждую проданную штуку вы платите и за логистику тех, что вернулись. Калькулятор распределяет эти расходы на проданные товары.</p></div>
+<div class="box"><h3>Минимальная цена</h3><p>Цена, при которой прибыль равна нулю. Если ставите скидку ниже неё — каждая продажа уносит деньги из оборота.</p></div>
+<div class="box"><h3>Налог</h3><p>Для НПД и УСН «Доходы» налог считается с цены продажи, а не с того, что перечислил маркетплейс. Для УСН 15% — с прибыли, но не меньше 1% от выручки.</p></div>
+</div>
+<p class="note">Калькулятор помогает прикинуть экономику товара и не заменяет консультацию бухгалтера. Расчёт делается прямо в вашем браузере — введённые цифры никуда не отправляются.</p>
+</div></section>
+<section class="info" style="padding-top:0"><div class="wrap">
+<div class="more"><div><b>Нужны карточки для этого товара?</b><p>Делаю главный слайд и инфографику для Wildberries и Ozon.</p></div><a class="btn" href="../kartochki/">Подробнее о карточках</a></div>
+</div></section>
+<footer>© 2026 · 奇尔图洛夫.Студия · бесплатный калькулятор для продавцов маркетплейсов</footer>
+<script>
+(function(){
+var presets={wb:{comm:24,log:90,ret:50,buy:85,stor:10,acq:0},oz:{comm:20,log:100,ret:60,buy:90,stor:8,acq:1.5}};
+var ids=['price','cogs','inb','pack','comm','log','ret','buy','stor','acq','ads','taxc','qty'];
+var el={}; ids.forEach(function(i){el[i]=document.getElementById(i);});
+var taxSel=document.getElementById('tax'), customRow=document.getElementById('customRow');
+function n(i){var v=parseFloat(String(el[i].value).replace(',','.'));return isFinite(v)?v:0;}
+function rub(x){var s=Math.round(x).toLocaleString('ru-RU');return s+' ₽';}
+function pct(x){return (Math.round(x*10)/10).toLocaleString('ru-RU')+'%';}
+function setTab(m){
+document.getElementById('t-wb').className=m==='wb'?'on':'';
+document.getElementById('t-oz').className=m==='oz'?'on':'';
+var p=presets[m]; Object.keys(p).forEach(function(k){el[k].value=p[k];}); calc();
+}
+document.getElementById('t-wb').onclick=function(){setTab('wb');};
+document.getElementById('t-oz').onclick=function(){setTab('oz');};
+function taxInfo(){
+var t=taxSel.value; customRow.hidden=(t!=='custom');
+if(t==='npd6')return {rate:0.06,mode:'rev',name:'Налог НПД 6%'};
+if(t==='npd4')return {rate:0.04,mode:'rev',name:'Налог НПД 4%'};
+if(t==='usn6')return {rate:0.06,mode:'rev',name:'Налог УСН 6%'};
+if(t==='usn15')return {rate:0.15,mode:'profit',name:'Налог УСН 15%'};
+return {rate:n('taxc')/100,mode:'rev',name:'Налог '+n('taxc')+'%'};
+}
+function calc(){
+var P=n('price'), cogs=n('cogs'), inb=n('inb'), pack=n('pack');
+var comm=n('comm')/100, log=n('log'), ret=n('ret'), buy=Math.max(1,Math.min(100,n('buy')))/100, stor=n('stor'), acq=n('acq')/100, ads=n('ads')/100;
+var tx=taxInfo();
+var logEff=log/buy + ret*(1-buy)/buy;
+var fixed=cogs+inb+pack+logEff+stor;
+var varRate=comm+acq+ads;
+var pre=P*(1-varRate)-fixed;
+var tax= tx.mode==='rev' ? P*tx.rate : Math.max(pre*tx.rate, P*0.01);
+if(tx.mode==='profit' && pre<=0) tax=P*0.01;
+var profit=pre-tax;
+var invest=cogs+inb+pack;
+var margin=P>0?profit/P*100:0, roi=invest>0?profit/invest*100:0;
+function priceFor(m){
+if(tx.mode==='rev'){var k=1-varRate-tx.rate-m; return k>0?fixed/k:NaN;}
+var k2=(1-varRate)*(1-tx.rate)-m; return k2>0?fixed*(1-tx.rate)/k2:NaN;
+}
+var be=priceFor(0), p20=priceFor(0.2);
+document.getElementById('r-profit').textContent=(profit>=0?'':'−')+rub(Math.abs(profit)).replace('−','');
+document.getElementById('r-sub').textContent=P>0?('из '+rub(P)+' цены продажи'):'';
+document.getElementById('r-margin').textContent=pct(margin);
+document.getElementById('r-roi').textContent=pct(roi);
+document.getElementById('r-be').textContent=isFinite(be)?rub(Math.ceil(be/10)*10):'—';
+document.getElementById('r-p20').textContent=isFinite(p20)?rub(Math.ceil(p20/10)*10):'—';
+document.getElementById('r-margin').style.color=document.getElementById('r-roi').style.color=profit>=0?'var(--ok)':'var(--bad)';
+var rows=[['Цена продажи',P],['Закупка',-cogs],['Доставка до склада и упаковка',-(inb+pack)],['Комиссия '+pct(comm*100),-P*comm],['Логистика с учётом возвратов',-logEff],['Хранение',-stor]];
+if(acq>0)rows.push(['Эквайринг и прочее',-P*acq]);
+rows.push(['Реклама '+pct(ads*100),-P*ads]);rows.push([tx.name,-tax]);
+var h='';rows.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+(r[1]<0?'−':'')+rub(Math.abs(r[1]))+'</td></tr>';});
+h+='<tr class="tot"><td>Прибыль с 1 шт.</td><td style="color:'+(profit>=0?'var(--ok)':'var(--bad)')+'">'+(profit<0?'−':'')+rub(Math.abs(profit))+'</td></tr>';
+document.getElementById('tbl').innerHTML=h;
+var v=document.getElementById('r-verdict');
+if(profit<0){v.className='verdict v-bad';v.textContent='Товар продаётся в минус. Поднимите цену минимум до '+(isFinite(be)?rub(Math.ceil(be/10)*10):'—')+', снизьте закупку или расходы на рекламу.';}
+else if(margin<15){v.className='verdict v-mid';v.textContent='Прибыль есть, но запас маленький: любая скидка, рост логистики или возвраты съедят её. Для спокойной работы обычно ориентируются на маржу от 20%.';}
+else {v.className='verdict v-ok';v.textContent='Хорошая экономика: есть запас на скидки, акции и рост расходов.';}
+var q=Math.max(0,n('qty'));
+document.getElementById('b-inv').textContent=rub(invest*q);
+document.getElementById('b-pr').textContent=(profit<0?'−':'')+rub(Math.abs(profit*q));
+}
+ids.forEach(function(i){el[i].addEventListener('input',calc);});
+taxSel.addEventListener('change',calc);
+calc();
+})();
+</script>
+</body>
+</html>
