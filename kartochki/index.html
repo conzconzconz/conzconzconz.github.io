@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карточки товаров для Wildberries и Ozon — дизайн и инфографика</title>
+<meta name="description" content="Дизайн карточек товаров для Wildberries и Ozon: главный слайд, инфографика, серия слайдов. Работаю напрямую, как самозанятый — с чеком. Срок 1–2 дня.">
+<meta property="og:title" content="Карточки товаров для Wildberries и Ozon">
+<meta property="og:description" content="Главный слайд и инфографика за 1–2 дня. Напрямую, с чеком самозанятого.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f2;--ink:#14161c;--mut:#5d6472;--acc:#7c3aed;--acc2:#db2777;--card:#fff;--line:#e5e3dd}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{padding:18px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:800;letter-spacing:-.01em}
+.logo span{color:var(--acc)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:14px;white-space:nowrap}
+.btn.sm{padding:10px 16px;font-size:14px;border-radius:11px}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.hero{padding:36px 20px 30px;display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
+.tag{display:inline-block;background:#ede9fe;color:#5b21b6;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:16px}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--mut);margin:18px 0 24px;max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}
+.facts b{display:block;font-size:22px}
+.facts span{font-size:14px;color:var(--mut)}
+.stack{position:relative;height:470px}
+.stack .frame{position:absolute;width:270px;height:360px;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(20,22,28,.25)}
+.stack .frame:nth-child(1){left:0;top:70px;transform:rotate(-6deg)}
+.stack .frame:nth-child(2){left:50%;top:0;transform:translateX(-50%);z-index:2}
+.stack .frame:nth-child(3){right:0;top:80px;transform:rotate(6deg)}
+.frame .scale{width:900px;height:1200px;transform:scale(.3);transform-origin:0 0}
+section{padding:46px 0}
+h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
+.sub{color:var(--mut);margin-bottom:28px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery .frame{width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 10px 30px rgba(20,22,28,.12);background:#ddd}
+.gallery .frame .scale{position:absolute;left:0;top:0;transform-origin:0 0}
+.gallery p{font-size:14px;color:var(--mut);margin-top:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.box h3{font-size:18px;margin-bottom:6px}
+.box p{color:var(--mut);font-size:15px}
+.ico{width:40px;height:40px;border-radius:12px;background:#ede9fe;display:grid;place-items:center;margin-bottom:12px;font-size:20px}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column}
+.price.hit{border:2px solid var(--acc);position:relative}
+.price.hit::before{content:"Чаще всего берут";position:absolute;top:-12px;left:22px;background:var(--acc);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.price h3{font-size:19px}
+.price .sum{font-size:34px;font-weight:800;margin:10px 0 4px;letter-spacing:-.02em}
+.price .term{color:var(--mut);font-size:14px;margin-bottom:16px}
+.price ul{list-style:none;display:grid;gap:8px;margin-bottom:22px;font-size:15px}
+.price li::before{content:"✓ ";color:var(--acc);font-weight:800}
+.price .btn{margin-top:auto;justify-content:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;margin-bottom:12px}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p{font-size:14.5px;color:var(--mut)}
+.legal{margin-top:18px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:16px;padding:16px 18px;font-size:15px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;list-style:none}
+summary::after{content:"+";float:right;color:var(--acc);font-weight:800}
+details[open] summary::after{content:"−"}
+details p{color:var(--mut);margin-top:8px;font-size:15px}
+.final{background:linear-gradient(135deg,#1e1b4b,#581c87);color:#fff;border-radius:26px;padding:42px 34px;text-align:center}
+.final p{color:#ddd6fe;margin:10px auto 22px;max-width:560px}
+.final .btn{background:#fff;color:#4c1d95}
+footer{padding:28px 0 40px;color:var(--mut);font-size:13px;text-align:center}
+.demo{font-size:13px;color:var(--mut);margin-top:14px}
+@media (max-width:900px){
+.hero{grid-template-columns:1fr}
+.stack{height:400px;max-width:420px;margin:0 auto;width:100%}
+.stack .frame{width:225px;height:300px}
+.stack .frame .scale{transform:scale(.25)}
+.gallery,.grid3,.prices{grid-template-columns:1fr}
+.gallery{grid-template-columns:repeat(3,minmax(220px,1fr));overflow-x:auto;padding-bottom:6px}
+.steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+.steps{grid-template-columns:1fr}
+.stack .frame{width:160px;height:213px}
+.stack .frame .scale{transform:scale(.1778)}
+.stack{height:300px}
+header .btn.sm span{display:none}
+}
+/* ===== card designs ===== */
+.card{width:900px;height:1200px;position:relative;overflow:hidden;font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.5}
+.card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none}
+.card .feat{display:flex;gap:14px;align-items:center;font-weight:600;font-size:23px;line-height:1.15}
+.card .feat small{display:block;font-weight:500;font-size:17px;opacity:.75;margin-top:3px}
+.card h1{font-size:inherit;background:none;-webkit-background-clip:initial}
+#c1{background:radial-gradient(circle at 70% 35%,#3b4b63 0,#1b2433 60%,#121823 100%);color:#fff}
+#c1 .brand{position:absolute;left:56px;top:52px;font-weight:800;letter-spacing:.32em;font-size:22px;color:#f5b971}
+#c1 h1{position:absolute;left:56px;top:96px;font-size:66px;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+#c1 h1 span{color:#f5b971}
+#c1 .sub2{position:absolute;left:58px;top:330px;font-size:24px;color:#c7d0de}
+#c1 .feats{position:absolute;left:56px;top:430px;display:grid;gap:34px;width:380px}
+#c1 .ic{background:rgba(245,185,113,.16);border:1.5px solid rgba(245,185,113,.5)}
+#c1 .badge{position:absolute;left:56px;bottom:64px;background:#f5b971;color:#1b2433;border-radius:22px;padding:18px 26px;font-weight:800;font-size:30px;line-height:1.05}
+#c1 .badge small{display:block;font-size:17px;font-weight:600;opacity:.8}
+#c1 .vol{position:absolute;right:58px;bottom:70px;border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:12px 22px;font-size:22px;font-weight:700}
+#c2{background:linear-gradient(170deg,#f7efe6 0%,#efe2d3 55%,#e6d3bf 100%);color:#3b2a20}
+#c2 .brand{position:absolute;left:0;right:0;top:56px;text-align:center;font-family:Lora,Georgia,serif;font-style:italic;font-size:30px;color:#9a6b4a}
+#c2 h1{position:absolute;left:0;right:0;top:104px;text-align:center;font-family:Lora,Georgia,serif;font-weight:700;font-size:64px;line-height:1.05}
+#c2 .sub2{position:absolute;left:0;right:0;top:250px;text-align:center;font-size:24px;color:#7a5a45}
+#c2 .pill{position:absolute;top:300px;left:50%;transform:translateX(-50%);background:#3b2a20;color:#f7efe6;border-radius:999px;padding:10px 24px;font-size:20px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+#c2 .feats{position:absolute;bottom:58px;left:46px;right:46px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#c2 .feat{background:rgba(255,255,255,.72);border-radius:20px;padding:18px}
+#c2 .ic{background:#efe0cf}
+#c2 .notes{position:absolute;right:52px;top:430px;display:grid;gap:12px;text-align:right}
+#c2 .notes div{background:#fff;border-radius:14px;padding:10px 16px;font-size:19px;font-weight:600;box-shadow:0 6px 18px rgba(80,50,30,.10)}
+#c2 .notes b{color:#9a6b4a}
+#c3{background:#eaf6f1;color:#0f3d33}
+#c3 .top{position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(135deg,#127a63,#0f5c4c);clip-path:polygon(0 0,100% 0,100% 82%,0 100%)}
+#c3 .brand{position:absolute;left:56px;top:50px;font-weight:800;font-size:26px;letter-spacing:.2em;color:#a7f3d0}
+#c3 h1{position:absolute;left:56px;top:92px;font-size:64px;line-height:1.02;font-weight:800;color:#fff;letter-spacing:-.02em}
+#c3 .sub2{position:absolute;left:58px;top:240px;font-size:24px;color:#d1fae5}
+#c3 .size{position:absolute;right:56px;top:70px;background:#fff;border-radius:24px;padding:18px 22px;text-align:center;color:#0f5c4c;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+#c3 .size b{display:block;font-size:44px;line-height:1}
+#c3 .size span{font-size:17px;font-weight:600}
+#c3 .feats{position:absolute;left:46px;right:46px;bottom:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#c3 .feat{background:#fff;border-radius:20px;padding:18px;box-shadow:0 6px 20px rgba(15,61,51,.08)}
+#c3 .ic{background:#d1fae5}
+#c3 .cols{position:absolute;left:56px;top:830px;display:flex;gap:10px;align-items:center;font-size:19px;font-weight:600;color:#3b6b5f}
+#c3 .cols i{width:30px;height:30px;border-radius:50%;display:block;border:3px solid #fff;box-shadow:0 0 0 1.5px #b6d9cc}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="logo">奇尔图洛夫<span>.</span>Студия</div>
+<a class="btn sm" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Написать <span>ВКонтакте</span></a>
+</div></header>
+<div class="wrap hero">
+<div>
+<div class="tag">Wildberries · Ozon · Яндекс Маркет</div>
+<h1>Карточки товаров, <em>которые продают</em></h1>
+<p class="lead">Главный слайд и инфографика для маркетплейсов за 1–2 дня. Работаю напрямую, без бирж и посредников — как самозанятый, с чеком.</p>
+<div class="cta">
+<a class="btn" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Обсудить карточку</a>
+<a class="btn ghost" href="#prices">Цены</a>
+</div>
+<div class="facts">
+<div><b>от 900 ₽</b><span>за слайд</span></div>
+<div><b>1–2 дня</b><span>срок</span></div>
+<div><b>2 правки</b><span>бесплатно</span></div>
+</div>
+</div>
+<div class="stack" id="stack"></div>
+</div>
+<section id="examples"><div class="wrap">
+<h2>Примеры карточек</h2>
+<p class="sub">Три разных стиля под разные товары и аудитории.</p>
+<div class="gallery" id="gallery"></div>
+<p class="demo">Бренды на примерах демонстрационные — карточки сделаны для портфолио. Для вашего товара использую ваши фото.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Что получите</h2>
+<p class="sub">Карточка отвечает на вопросы покупателя за 2–3 секунды, пока он листает выдачу.</p>
+<div class="grid3">
+<div class="box"><div class="ico">🎯</div><h3>Главный слайд</h3><p>Товар крупно, понятный заголовок и 3–4 главных преимущества — то, что видно в выдаче.</p></div>
+<div class="box"><div class="ico">📐</div><h3>Инфографика</h3><p>Размеры, состав, комплектация, сценарии использования — отдельными слайдами.</p></div>
+<div class="box"><div class="ico">✍️</div><h3>Тексты на карточке</h3><p>Коротко и по делу. Помогу сформулировать преимущества, если их пока нет.</p></div>
+<div class="box"><div class="ico">📱</div><h3>Читается с телефона</h3><p>Крупный шрифт и контраст — большинство покупателей смотрит карточки со смартфона.</p></div>
+<div class="box"><div class="ico">✅</div><h3>По правилам площадок</h3><p>Формат 3:4, без ложных скидок, чужих логотипов и мелкого нечитаемого текста.</p></div>
+<div class="box"><div class="ico">🗂</div><h3>Готовые файлы</h3><p>JPG/PNG в высоком качестве — сразу загружаете в личный кабинет продавца.</p></div>
+</div>
+</div></section>
+<section id="prices"><div class="wrap">
+<h2>Цены</h2>
+<p class="sub">Фиксирую цену до начала работы. Без доплат «по ходу».</p>
+<div class="prices">
+<div class="price"><h3>Главный слайд</h3><div class="sum">900 ₽</div><div class="term">1–2 дня</div>
+<ul><li>обложка карточки</li><li>заголовок и 3–4 преимущества</li><li>2 правки</li></ul>
+<a class="btn ghost" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Заказать</a></div>
+<div class="price hit"><h3>Карточка под ключ</h3><div class="sum">2 900 ₽</div><div class="term">2–3 дня · 5 слайдов</div>
+<ul><li>главный слайд</li><li>4 слайда инфографики</li><li>единый стиль</li><li>тексты на слайдах</li><li>2 правки</li></ul>
+<a class="btn" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Заказать</a></div>
+<div class="price"><h3>Линейка товаров</h3><div class="sum">от 5 000 ₽</div><div class="term">по объёму</div>
+<ul><li>общий стиль для нескольких товаров</li><li>скидка за количество</li><li>сроки по договорённости</li></ul>
+<a class="btn ghost" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Обсудить</a></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Как работаем</h2>
+<p class="sub">Напрямую, без бирж — дешевле для вас и быстрее.</p>
+<div class="steps">
+<div class="step"><h3>Пишете ВКонтакте</h3><p>Присылаете фото товара, ссылку на карточку или конкурентов и что важно показать.</p></div>
+<div class="step"><h3>Согласуем задачу</h3><p>Называю цену и срок, уточняю детали. Цена дальше не меняется.</p></div>
+<div class="step"><h3>Предоплата 50%</h3><p>Перевод на карту, сразу присылаю чек самозанятого из «Мой налог».</p></div>
+<div class="step"><h3>Макет и правки</h3><p>Показываю результат, вношу правки, после оплаты остатка отдаю файлы.</p></div>
+</div>
+<div class="legal">Работаю официально как самозанятый (НПД): на каждую оплату — чек, его можно провести в расходах вашего ИП или ООО.</div>
+</div></section>
+<section><div class="wrap">
+<h2>Частые вопросы</h2>
+<details><summary>Что нужно от меня?</summary><p>Фото товара (лучше на белом или прозрачном фоне), название, 3–6 преимуществ и характеристики. Если есть карточки, которые нравятся, — ссылки на них.</p></details>
+<details><summary>Если у меня нет хороших фото?</summary><p>Подойдут фото со смартфона на ровном светлом фоне при дневном свете — фон уберу и обработаю. Если фото совсем неподходящие, честно скажу об этом до начала работы.</p></details>
+<details><summary>Сделаете для Яндекс Маркета или Авито?</summary><p>Да, размеры подгоню под нужную площадку. Можно сразу сделать несколько форматов.</p></details>
+<details><summary>Можно потом менять карточку самому?</summary><p>Да, для линейки товаров сделаю общий стиль и шаблон слайдов, чтобы новые товары оформлять в том же виде.</p></details>
+<details><summary>Как оплачивать?</summary><p>50% перед началом, 50% после согласования макета. Перевод на карту, на каждую оплату — чек самозанятого.</p></details>
+</div></section>
+<section><div class="wrap">
+<div class="final">
+<h2>Покажите товар — предложу идею карточки</h2>
+<p>Напишите ВКонтакте: пришлите фото или ссылку на товар, и я скажу, что можно улучшить и сколько это будет стоить.</p>
+<a class="btn" href="https://vk.ru/achirtulov" target="_blank" rel="noopener">Написать ВКонтакте</a>
+</div>
+</div></section>
+<footer>© 2026 · 奇尔图洛夫.Студия · дизайн карточек для маркетплейсов · самозанятый</footer>
+<template id="tpl1"><div class="card" id="c1"><div class="brand">NORDA</div><h1>Термокружка<br>с крышкой<br><span>450 мл</span></h1><div class="sub2">Нержавеющая сталь · двойные стенки</div><div class="feats"><div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5b971" stroke-width="2" stroke-linecap="round"><path d="M12 3v10"/><circle cx="12" cy="17" r="4"/></svg></div><div>Тепло до 8 часов<small>холод — до 12 часов</small></div></div><div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5b971" stroke-width="2" stroke-linecap="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/><path d="M4 4l16 16"/></svg></div><div>Не протекает<small>герметичная крышка-клапан</small></div></div><div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5b971" stroke-width="2" stroke-linecap="round"><rect x="5" y="9" width="14" height="10" rx="2"/><path d="M8 9V6h8v3"/></svg></div><div>Влезает в подстаканник<small>автомобиля и кофемашины</small></div></div><div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5b971" stroke-width="2" stroke-linecap="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div>Сталь 304<small>без запаха и привкуса</small></div></div></div><svg style="position:absolute;right:40px;top:150px" width="400" height="860" viewBox="0 0 400 860"><defs><linearGradient id="st" x1="0" x2="1"><stop offset="0" stop-color="#6b7a90"/><stop offset=".18" stop-color="#dfe6ef"/><stop offset=".35" stop-color="#9aa8ba"/><stop offset=".7" stop-color="#4a566a"/><stop offset=".9" stop-color="#8794a8"/><stop offset="1" stop-color="#3b4558"/></linearGradient><linearGradient id="bd" x1="0" x2="1"><stop offset="0" stop-color="#a86a33"/><stop offset=".25" stop-color="#f5b971"/><stop offset=".45" stop-color="#d4904c"/><stop offset=".8" stop-color="#8a5226"/><stop offset="1" stop-color="#6d3f1c"/></linearGradient><linearGradient id="lid" x1="0" x2="1"><stop offset="0" stop-color="#1c2230"/><stop offset=".3" stop-color="#4b5568"/><stop offset="1" stop-color="#151a24"/></linearGradient><radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f5b971" stop-opacity=".35"/><stop offset="1" stop-color="#f5b971" stop-opacity="0"/></radialGradient></defs><ellipse cx="200" cy="470" rx="220" ry="330" fill="url(#glow)"/><ellipse cx="200" cy="815" rx="150" ry="22" fill="#000" opacity=".45"/><path d="M70 120 h260 l-22 680 q-88 26 -216 0z" fill="url(#bd)"/><path d="M70 120 h260 l-4 120 h-252z" fill="url(#st)"/><path d="M92 798 q108 24 216 0 l-2 12 q-106 22 -212 0z" fill="url(#st)"/><rect x="58" y="70" width="284" height="62" rx="16" fill="url(#lid)"/><rect x="150" y="56" width="100" height="22" rx="8" fill="#2a3242"/><rect x="232" y="78" width="70" height="10" rx="5" fill="#f5b971" opacity=".8"/><rect x="110" y="300" width="14" height="420" rx="7" fill="#fff" opacity=".22"/><text x="200" y="480" text-anchor="middle" font-family="Inter" font-weight="800" font-size="34" letter-spacing="10" fill="#fff" fill-opacity=".85">NORDA</text></svg><div class="badge"><small>в комплекте</small>2 крышки</div><div class="vol">450 мл · 320 г</div></div></template>
+<template id="tpl2"><div class="card" id="c2"><div class="brand">Lumina home</div><h1>Ароматическая<br>свеча в стекле</h1><div class="sub2">Соевый воск · хлопковый фитиль</div><div class="pill">ИНЖИР И ВАНИЛЬ</div><svg style="position:absolute;left:150px;top:370px" width="460" height="520" viewBox="0 0 460 520"><defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#c9a27f" stop-opacity=".55"/><stop offset=".2" stop-color="#fff" stop-opacity=".8"/><stop offset=".45" stop-color="#e9d2bb" stop-opacity=".35"/><stop offset=".85" stop-color="#b98b63" stop-opacity=".55"/><stop offset="1" stop-color="#9a6b4a" stop-opacity=".6"/></linearGradient><linearGradient id="wax" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fffaf3"/><stop offset="1" stop-color="#f1e3d2"/></linearGradient><radialGradient id="fl" cx=".5" cy=".6" r=".5"><stop offset="0" stop-color="#fff7d6"/><stop offset=".5" stop-color="#ffcf6b"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/></radialGradient><radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs><ellipse cx="200" cy="95" rx="150" ry="120" fill="url(#halo)"/><ellipse cx="200" cy="490" rx="170" ry="20" fill="#7a5a45" opacity=".25"/><path d="M60 170 h280 v290 q0 30 -30 30 h-220 q-30 0 -30 -30z" fill="url(#gl)" stroke="#fff" stroke-opacity=".7" stroke-width="3"/><path d="M70 200 h260 v255 q0 25 -25 25 h-210 q-25 0 -25 -25z" fill="url(#wax)" opacity=".92"/><ellipse cx="200" cy="200" rx="130" ry="18" fill="#fffdf8"/><rect x="98" y="290" width="204" height="120" rx="10" fill="#3b2a20"/><text x="200" y="338" text-anchor="middle" font-family="Lora" font-style="italic" font-size="30" fill="#f7efe6">Lumina</text><text x="200" y="378" text-anchor="middle" font-family="Inter" font-weight="600" font-size="15" letter-spacing="3" fill="#d9b994">FIG · VANILLA</text><rect x="197" y="150" width="6" height="48" rx="3" fill="#3b2a20"/><path d="M200 70 q-30 45 -6 80 q6 6 12 0 q24 -35 -6 -80z" fill="url(#fl)"/><ellipse cx="88" cy="300" rx="6" ry="90" fill="#fff" opacity=".55"/><g transform="translate(330 380)"><circle cx="40" cy="60" r="44" fill="#6b3a5a"/><path d="M40 16 q8 -14 20 -18" stroke="#4d6b3a" stroke-width="6" fill="none" stroke-linecap="round"/></g><g transform="translate(-6 400)"><path d="M10 80 q30 -80 90 -80 q-10 70 -90 80z" fill="#7c8f55"/></g></svg><div class="notes"><div><b>Верх:</b> спелый инжир</div><div><b>Сердце:</b> бергамот</div><div><b>База:</b> ваниль, сандал</div></div><div class="feats"><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9a6b4a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div>40 часов горения<small>200 мл воска</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9a6b4a" stroke-width="2" stroke-linecap="round"><path d="M7 20c0-8 4-14 10-16-1 7-4 13-10 16z"/></svg></div><div>Натуральный соевый воск<small>без парафина</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9a6b4a" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M4 7h10M4 17h13"/></svg></div><div>Ровное горение<small>без копоти</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9a6b4a" stroke-width="2" stroke-linecap="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8v12M4 12h16"/></svg></div><div>Готовый подарок<small>в крафтовой коробке</small></div></div></div></div></template>
+<template id="tpl3"><div class="card" id="c3"><div class="top"></div><div class="brand">FLOW</div><h1>Коврик<br>для йоги и фитнеса</h1><div class="sub2">Нескользящий · с ремнём для переноски</div><div class="size"><b>6 мм</b><span>толщина</span></div><svg style="position:absolute;left:30px;top:330px" width="840" height="450" viewBox="0 0 840 450"><defs><linearGradient id="mt" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2bb592"/><stop offset="1" stop-color="#139273"/></linearGradient><linearGradient id="rl" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1a9e7d"/><stop offset=".35" stop-color="#4fd1ad"/><stop offset=".6" stop-color="#16876b"/><stop offset="1" stop-color="#0d5f4b"/></linearGradient></defs><ellipse cx="420" cy="410" rx="390" ry="26" fill="#0f3d33" opacity=".12"/><path d="M120 250 L700 250 L790 400 L40 400 Z" fill="url(#mt)"/><path d="M40 400 L790 400 L790 412 L40 412 Z" fill="#0d6b55"/><g opacity=".22" stroke="#fff" stroke-width="2"><path d="M150 280 L690 280"/><path d="M130 310 L715 310"/><path d="M105 345 L740 345"/><path d="M80 375 L765 375"/></g><rect x="470" y="95" width="320" height="150" rx="75" fill="url(#rl)"/><ellipse cx="545" cy="170" rx="70" ry="75" fill="#0d5f4b"/><path d="M545 100 a70 75 0 1 0 0.1 0" fill="none" stroke="#2bb592" stroke-width="10"/><path d="M545 120 a50 52 0 1 0 0.1 0" fill="none" stroke="#2bb592" stroke-width="9"/><path d="M545 140 a30 30 0 1 0 0.1 0" fill="none" stroke="#2bb592" stroke-width="8"/><circle cx="545" cy="170" r="10" fill="#2bb592"/><rect x="640" y="90" width="22" height="160" rx="6" fill="#f2c94c"/><rect x="730" y="90" width="22" height="160" rx="6" fill="#f2c94c"/><path d="M651 92 q50 -80 90 0" fill="none" stroke="#f2c94c" stroke-width="12" stroke-linecap="round"/><g stroke="#0f5c4c" stroke-width="2.5"><path d="M40 432 L790 432"/><path d="M40 424 v16 M790 424 v16"/></g></svg><div style="position:absolute;left:340px;top:760px;background:#eaf6f1;padding:0 14px;font-weight:700;font-size:22px;color:#0f5c4c">183 × 61 см</div><div class="cols">Цвета: <i style="background:#1a9e7d"></i><i style="background:#8b7bd8"></i><i style="background:#e7838f"></i><i style="background:#3b4558"></i></div><div class="feats"><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f5c4c" stroke-width="2" stroke-linecap="round"><path d="M4 18c3-2 5-2 8 0s5 2 8 0M4 13c3-2 5-2 8 0s5 2 8 0"/></svg></div><div>Не скользит<small>рельеф с двух сторон</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f5c4c" stroke-width="2" stroke-linecap="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></div><div>Мягкий для суставов<small>плотный TPE, 6 мм</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f5c4c" stroke-width="2" stroke-linecap="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div><div>Легко моется<small>не впитывает пот</small></div></div><div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f5c4c" stroke-width="2" stroke-linecap="round"><path d="M6 8c0-3 12-3 12 0M5 8h14l-1 12H6z"/></svg></div><div>Ремень в комплекте<small>вес всего 900 г</small></div></div></div></div></template>
+<script>
+(function(){
+var ids=['tpl1','tpl2','tpl3'], names=['Тёмный «премиальный» стиль — термокружка','Тёплый уютный стиль — свеча','Яркий спортивный стиль — коврик'];
+var stack=document.getElementById('stack'), gal=document.getElementById('gallery');
+function frame(id, uniq){
+var f=document.createElement('div'); f.className='frame';
+var s=document.createElement('div'); s.className='scale';
+var html=document.getElementById(id).innerHTML;
+html=html.replace(/id="(st|bd|lid|glow|gl|wax|fl|halo|mt|rl)"/g,'id="$1'+uniq+'"').replace(/url\(#(st|bd|lid|glow|gl|wax|fl|halo|mt|rl)\)/g,'url(#$1'+uniq+')');
+s.innerHTML=html; f.appendChild(s); return f;
+}
+ids.forEach(function(id,i){ stack.appendChild(frame(id,'a'+i)); });
+ids.forEach(function(id,i){
+var w=document.createElement('div'); var f=frame(id,'b'+i); w.appendChild(f);
+var p=document.createElement('p'); p.textContent=names[i]; w.appendChild(p); gal.appendChild(w);
+});
+function fit(){
+var fr=gal.querySelectorAll('.frame');
+for(var i=0;i<fr.length;i++){ var k=fr[i].clientWidth/900; fr[i].firstChild.style.transform='scale('+k+')'; }
+}
+fit(); window.addEventListener('resize',fit);
+})();
+</script>
+</body>
+</html>
