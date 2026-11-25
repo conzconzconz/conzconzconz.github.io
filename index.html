@@ -104,6 +104,13 @@ footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px;border
   section{padding:60px 0}
 }
 @media(max-width:480px){.steps{grid-template-columns:1fr}.wrap{padding:0 16px}}
+.mm{position:fixed;inset:0;background:rgba(43,38,32,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.mm.on{display:flex}
+.mm div{background:var(--paper);border-radius:18px;padding:28px;max-width:360px;width:100%;text-align:center}
+.mm h3{font-size:28px;margin-bottom:6px}
+.mm p{color:var(--muted);font-size:15px;margin-bottom:16px;word-break:break-all}
+.mm a,.mm button{display:block;width:100%;margin-top:10px;padding:12px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:600 15px Manrope,sans-serif;text-decoration:none;cursor:pointer}
+.mm button.g{background:transparent;color:var(--ink);border-color:var(--line)}
 </style>
 </head>
 <body>
@@ -187,7 +194,7 @@ footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px;border
     <a class="btn" href="https://vk.ru/id219591285" target="_blank" rel="noopener">ВКонтакте</a>
     <a class="btn" href="https://ok.ru/profile/376114816761" target="_blank" rel="noopener">Одноклассники</a>
     <a class="btn ghost" href="tel:+79049808730">Позвонить</a>
-    <a class="btn ghost" href="mailto:ivanovaua75@mail.ru">Написать на почту</a>
+    <a class="btn ghost" id="mailbtn" href="mailto:ivanovaua75@mail.ru">Написать на почту</a>
   </div>
   <p class="cinfo">Телефон и MAX: <a href="tel:+79049808730">+7 904 980-87-30</a><br>Почта: <a href="mailto:ivanovaua75@mail.ru">ivanovaua75@mail.ru</a></p>
 </div></section>
@@ -225,6 +232,21 @@ lb.querySelector('.pv').onclick=e=>{e.stopPropagation();step(-1)};
 lb.querySelector('.nx').onclick=e=>{e.stopPropagation();step(1)};
 lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
 document.onkeydown=e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)};
+</script>
+<div class="mm" id="mm"><div><h3>Написать на почту</h3><p>ivanovaua75@mail.ru</p>
+<a href="https://e.mail.ru/compose?To=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Mail.ru</a>
+<a href="https://mail.yandex.ru/compose?to=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Яндекс Почте</a>
+<a href="https://mail.google.com/mail/?view=cm&to=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Gmail</a>
+<a href="mailto:ivanovaua75@mail.ru">Почтовая программа на компьютере</a>
+<button type="button" id="mcopy">Скопировать адрес</button><button type="button" class="g" id="mclose">Закрыть</button></div></div>
+<script>
+const mm=document.getElementById('mm');
+document.getElementById('mailbtn').onclick=e=>{e.preventDefault();mm.classList.add('on')};
+document.getElementById('mclose').onclick=()=>mm.classList.remove('on');
+mm.onclick=e=>{if(e.target===mm)mm.classList.remove('on')};
+document.getElementById('mcopy').onclick=function(){const t='ivanovaua75@mail.ru',b=this;
+ const ok=()=>{b.textContent='Адрес скопирован';setTimeout(()=>b.textContent='Скопировать адрес',2000)};
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,()=>prompt('Скопируйте адрес:',t));else prompt('Скопируйте адрес:',t)};
 </script>
 </body>
 </html>
