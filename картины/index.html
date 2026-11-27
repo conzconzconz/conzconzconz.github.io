@@ -193,13 +193,13 @@ footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px;border
   <div class="cta">
     <a class="btn" href="https://vk.ru/id219591285" target="_blank" rel="noopener">ВКонтакте</a>
     <a class="btn" href="https://ok.ru/profile/376114816761" target="_blank" rel="noopener">Одноклассники</a>
-    <a class="btn ghost" href="tel:+79049808730">Позвонить</a>
-    <a class="btn ghost" id="mailbtn" href="mailto:ivanovaua75@mail.ru">Написать на почту</a>
+    <a class="btn ghost" href="tel:+79523220165">Позвонить</a>
+    <a class="btn ghost" id="mailbtn" href="mailto:conz58484@gmail.com">Написать на почту</a>
   </div>
-  <p class="cinfo">Телефон и MAX: <a href="tel:+79049808730">+7 904 980-87-30</a><br>Почта: <a href="mailto:ivanovaua75@mail.ru">ivanovaua75@mail.ru</a></p>
+  <p class="cinfo">Телефон и MAX: <a href="tel:+79523220165">+7 952 322-01-65</a><br>Почта: <a href="mailto:conz58484@gmail.com">conz58484@gmail.com</a></p>
 </div></section>
 
-<footer>Мария Заречная · картины на заказ · +7 904 980-87-30</footer>
+<footer>Мария Заречная · картины на заказ · +7 952 322-01-65</footer>
 
 <div class="lb" id="lb"><button class="x" aria-label="Закрыть">×</button><button class="pv" aria-label="Назад">‹</button><img alt=""><div class="cap"></div><button class="nx" aria-label="Вперёд">›</button></div>
 
@@ -234,18 +234,18 @@ lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
 document.onkeydown=e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)};
 document.querySelectorAll('.hero-art img').forEach(im=>{const k=works.findIndex(w=>im.getAttribute('src').includes('/'+w[0]));if(k<0)return;im.style.cursor='zoom-in';im.onclick=()=>show(k)});
 </script>
-<div class="mm" id="mm"><div><h3>Написать на почту</h3><p>ivanovaua75@mail.ru</p>
-<a href="https://e.mail.ru/compose?To=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Mail.ru</a>
-<a href="https://mail.yandex.ru/compose?to=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Яндекс Почте</a>
-<a href="https://mail.google.com/mail/?view=cm&to=ivanovaua75@mail.ru" target="_blank" rel="noopener">Открыть в Gmail</a>
-<a href="mailto:ivanovaua75@mail.ru">Почтовая программа на компьютере</a>
+<div class="mm" id="mm"><div><h3>Написать на почту</h3><p>conz58484@gmail.com</p>
+<a href="https://e.mail.ru/compose?To=conz58484@gmail.com" target="_blank" rel="noopener">Открыть в Mail.ru</a>
+<a href="https://mail.yandex.ru/compose?to=conz58484@gmail.com" target="_blank" rel="noopener">Открыть в Яндекс Почте</a>
+<a href="https://mail.google.com/mail/?view=cm&to=conz58484@gmail.com" target="_blank" rel="noopener">Открыть в Gmail</a>
+<a href="mailto:conz58484@gmail.com">Почтовая программа на компьютере</a>
 <button type="button" id="mcopy">Скопировать адрес</button><button type="button" class="g" id="mclose">Закрыть</button></div></div>
 <script>
 const mm=document.getElementById('mm');
 document.getElementById('mailbtn').onclick=e=>{e.preventDefault();mm.classList.add('on')};
 document.getElementById('mclose').onclick=()=>mm.classList.remove('on');
 mm.onclick=e=>{if(e.target===mm)mm.classList.remove('on')};
-document.getElementById('mcopy').onclick=function(){const t='ivanovaua75@mail.ru',b=this;
+document.getElementById('mcopy').onclick=function(){const t='conz58484@gmail.com',b=this;
  const ok=()=>{b.textContent='Адрес скопирован';setTimeout(()=>b.textContent='Скопировать адрес',2000)};
  if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,()=>prompt('Скопируйте адрес:',t));else prompt('Скопируйте адрес:',t)};
 </script>
